@@ -1,0 +1,331 @@
+/* Sistema de Diseño - Pacifika Clínica Dental */
+/* Estilos personalizados y utilidades */
+
+/* Variables CSS personalizadas */
+:root {
+  /* Colores de la clínica */
+  --color-primary: #A5C83E;
+  --color-primary-light: #b0dd73;
+  --color-primary-dark: #7a9e2e;
+  
+  --color-secondary: #14b8a6;
+  --color-accent: #6ee7b7;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Gradientes personalizados */
+  --gradient-primary: linear-gradient(135deg, #A5C83E 0%, #b0dd73 100%);
+  --gradient-secondary: linear-gradient(135deg, #14b8a6 0%, #6ee7b7 100%);
+  --gradient-hero: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+  
+  /* Sombras personalizadas */
+  --shadow-dental: 0 10px 25px -5px rgba(165, 200, 62, 0.1), 0 10px 10px -5px rgba(165, 200, 62, 0.04);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Utilidades personalizadas */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-dental {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.shadow-dental {
+  box-shadow: var(--shadow-dental);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Animaciones personalizadas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-dental {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-dental {
+  animation: pulse-dental 2s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+/* Efectos hover personalizados */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Estilos para formularios */
+.form-input {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-error {
+  @apply text-sm text-red-600 mt-1;
+}
+
+.form-helper {
+  @apply text-sm text-gray-500 mt-1;
+}
+
+/* Estilos para botones */
+.btn-primary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary-500 text-white font-semibold shadow-lg hover:bg-primary-600 hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-gray-300 text-gray-700 font-semibold hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-primary-500 font-semibold hover:bg-primary-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+/* Estilos para cards */
+.card {
+  @apply bg-white rounded-2xl shadow-card hover:shadow-xl transition-all duration-300;
+}
+
+.card-elevated {
+  @apply bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.card-outlined {
+  @apply bg-transparent rounded-2xl border-2 border-gray-200 hover:border-blue-500 transition-all duration-300;
+}
+
+/* Estilos para secciones */
+.section-padding {
+  @apply py-16 md:py-20;
+}
+
+.section-padding-sm {
+  @apply py-12 md:py-16;
+}
+
+.section-padding-lg {
+  @apply py-20 md:py-24;
+}
+
+/* Estilos para contenedores */
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.container-sm {
+  @apply mx-auto max-w-3xl px-4 sm:px-6 lg:px-8;
+}
+
+.container-lg {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+/* Estilos para títulos */
+.title-xl {
+  @apply text-3xl md:text-4xl font-bold text-gray-900;
+}
+
+.title-lg {
+  @apply text-2xl md:text-3xl font-bold text-gray-900;
+}
+
+.title-md {
+  @apply text-xl md:text-2xl font-semibold text-gray-900;
+}
+
+.title-sm {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+/* Estilos para texto */
+.text-body {
+  @apply text-gray-600 leading-relaxed;
+}
+
+.text-body-lg {
+  @apply text-lg text-gray-600 leading-relaxed;
+}
+
+.text-muted {
+  @apply text-gray-500;
+}
+
+/* Estilos para badges */
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-primary {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.badge-secondary {
+  @apply bg-gray-100 text-gray-800;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-error {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Estilos responsivos personalizados */
+@media (max-width: 640px) {
+  .mobile-padding {
+    @apply px-4 py-8;
+  }
+  
+  .mobile-text-center {
+    @apply text-center;
+  }
+  
+  .mobile-stack {
+    @apply flex flex-col space-y-4;
+  }
+}
+
+/* Estilos para scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para focus visible */
+.focus-visible {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+/* Estilos para loading states */
+.loading {
+  @apply opacity-50 pointer-events-none;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-4 w-4 border-b-2 border-current;
+}
+
+/* Estilos para estados de error */
+.error-state {
+  @apply border-red-300 bg-red-50 text-red-900;
+}
+
+/* Estilos para estados de éxito */
+.success-state {
+  @apply border-green-300 bg-green-50 text-green-900;
+}
+
+/* Estilos para header oscuro */
+.header-dark {
+  @apply bg-slate-900/95 backdrop-blur border-slate-700;
+}
+
+.header-dark .nav-link {
+  @apply text-slate-300 hover:text-white hover:bg-slate-800;
+}
+
+.header-dark .nav-link.active {
+  @apply bg-primary-500 text-white;
+}
+
+.header-dark .btn-outline {
+  @apply border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white;
+}
+
+.header-dark .btn-primary {
+  @apply bg-primary-500 text-white hover:bg-primary-600 shadow-slate-900/20;
+}
+

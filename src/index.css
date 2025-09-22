@@ -1,0 +1,6 @@
+/* Importar estilos personalizados del sistema de diseño */
+@import './design-system/styles/custom.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
