@@ -5,7 +5,6 @@ interface TestimonialCardProps {
   treatment: string;
   rating: number;
   comment: string;
-  avatar?: string;
 }
 
 const StarRating: React.FC<{ rating: number }> = ({ rating }) => {
@@ -30,8 +29,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   name,
   treatment,
   rating,
-  comment,
-  avatar
+  comment
 }) => {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { logoConfig, getLogoClasses } from '../config/logo';
+import { logoConfig } from '../config/logo';
 
 interface LogoProps {
   location?: 'header' | 'footer' | 'hero' | 'card';

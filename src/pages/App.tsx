@@ -195,7 +195,7 @@ export default function App() {
             style={{ y: backgroundY }}
           >
             <img
-              src="/imagenes/background-inicio.jpg"
+              src="/background-inicio.jpg"
               alt="Pacifika Clínica Dental"
               className="w-full h-full object-cover"
             />
