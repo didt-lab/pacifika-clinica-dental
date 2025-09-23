@@ -2,13 +2,6 @@ import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
 
-const scrollToId = (id: string) => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const y = el.getBoundingClientRect().top + window.scrollY - 84;
-  window.scrollTo({ top: y, behavior: "smooth" });
-};
-
 export default function RestauradoraAvanzada() {
   // Parallax scroll effect for hero background
   const { scrollY } = useScroll();
