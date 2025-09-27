@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
 
-export default function Endodoncia() {
+export default function OdontologiaIntegral() {
   // Parallax scroll effect for hero background
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
@@ -19,7 +19,7 @@ export default function Endodoncia() {
     nombre: '',
     correo: '',
     telefono: '',
-    tratamiento: 'Endodoncia',
+    tratamiento: 'Odontología Integral',
     mensaje: ''
   });
   const [formErrors, setFormErrors] = useState<{[key: string]: string}>({});
@@ -85,7 +85,7 @@ export default function Endodoncia() {
         nombre: '',
         correo: '',
         telefono: '',
-        tratamiento: 'Endodoncia',
+        tratamiento: 'Odontología Integral',
         mensaje: ''
       });
       setFormErrors({});
@@ -99,10 +99,10 @@ export default function Endodoncia() {
   };
 
   return (
-    <Layout currentPage="odontologia-general">
+    <Layout currentPage="odontologia-integral">
       <main>
         {/* Hero Section */}
-        <section id="portada_odontologia_general" className="relative text-white py-20 overflow-hidden">
+        <section id="portada_odontologia_integral" className="relative text-white py-20 overflow-hidden">
           {/* Background with parallax */}
           <motion.div
             className="absolute inset-0 z-0"
@@ -111,7 +111,7 @@ export default function Endodoncia() {
             <div
               className="w-full h-[120%] bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: 'url(/imagenes/Endodoncia.jpg)',
+                backgroundImage: 'url(/imagenes/Odontologia.jpg)',
               }}
             />
             <div className="absolute inset-0 w-full h-[120%] bg-slate-900/70"></div>
@@ -125,14 +125,14 @@ export default function Endodoncia() {
                 className="max-w-4xl"
               >
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                  Odontología General en Mazatlán: <span className="text-primary-500">tratamiento para dolor de muela sin dolor</span>
+                  Odontología Integral en Mazatlán: <span className="text-primary-500">la base para una sonrisa saludable</span>
                 </h1>
                 <p className="text-xl mb-8 leading-relaxed text-gray-300">
-                  Contamos con más de 13 años de experiencia en endodoncia, tecnología de vanguardia y atención personalizada para cuidar tu salud bucal en un ambiente seguro y moderno.
+                  Nuestros servicios de odontología integral cubren todas tus necesidades, desde limpiezas y revisiones hasta tratamientos restauradores, garantizando tu salud bucal completa.
                 </p>
                 <div className="flex justify-start">
                   <a
-                    href="https://wa.me/526699928700?text=Hola%2C%20necesito%20una%20consulta%20de%20endodoncia"
+                    href="https://wa.me/526699928700?text=Hola%2C%20me%20gustaría%20una%20consulta%20de%20odontología%20integral"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -169,8 +169,8 @@ export default function Endodoncia() {
                   viewport={{ once: true, amount: 0.3 }}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face"
-                    alt="Dr. Juan Manuel Lizárraga - Endodoncista en Mazatlán"
+                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face"
+                    alt="Dra. Krizia Zamudio - Odontología Integral en Mazatlán"
                     className="w-full h-full min-h-[600px] object-cover"
                   />
                   <motion.div 
@@ -206,7 +206,7 @@ export default function Endodoncia() {
                       viewport={{ once: true }}
                     >
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                        Tu endodoncista en Mazatlán
+                        Tu especialista en Odontología Integral
                       </h2>
                     </motion.div>
 
@@ -218,7 +218,7 @@ export default function Endodoncia() {
                       viewport={{ once: true }}
                     >
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        El <b>Dr. Juan Manuel Lizárraga</b> es especialista en endodoncia con formación en la Universidad Autónoma de Sinaloa y la Universidad Autónoma de Baja California. Con más de 15 años de experiencia, ofrece tratamientos indoloros para conservar tus dientes y aliviar el dolor de muela.
+                        La <b>Dra. Krizia Zamudio</b> es especialista en odontología integral, dedicada a la prevención, diagnóstico y tratamiento de problemas de salud bucal. Su enfoque se centra en ofrecer un cuidado completo y personalizado para mantener tu sonrisa sana y radiante.
                       </p>
                     </motion.div>
 
@@ -231,7 +231,7 @@ export default function Endodoncia() {
                       viewport={{ once: true }}
                     >
                       <a
-                        href="https://wa.me/526699928700?text=Hola%2C%20necesito%20agendar%20una%20cita%20con%20el%20Dr.%20Lizárraga%20para%20endodoncia"
+                        href="https://wa.me/526699928700?text=Hola%2C%20quisiera%20agendar%20una%20cita%20con%20la%20Dra.%20Zamudio"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -239,7 +239,7 @@ export default function Endodoncia() {
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
                         </svg>
-                        Agendar cita con el Dr. Lizárraga
+                        Agendar cita con la Dra. Zamudio
                       </a>
                     </motion.div>
                   </div>
@@ -262,10 +262,10 @@ export default function Endodoncia() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                ¿Qué es la endodoncia y cuándo la necesitas?
+                ¿Qué es la Odontología Integral?
               </h2>
               <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
-                La endodoncia, también conocida como tratamiento de conducto, se utiliza para eliminar la infección dentro del diente y aliviar el dolor de muela de forma definitiva.
+                La odontología integral se enfoca en el cuidado completo de tu salud bucal, abarcando desde la prevención y diagnóstico hasta tratamientos restauradores y estéticos para asegurar el bienestar general de tu sonrisa.
               </p>
               <motion.a
                 href="#contacto"
@@ -298,7 +298,7 @@ export default function Endodoncia() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Beneficios de una endodoncia
+                Beneficios de la Odontología Integral
               </h2>
             </motion.div>
 
@@ -318,10 +318,10 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Evita la pérdida de dientes
+                  Prevención y Detección Temprana
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Conserva tu diente natural gracias al tratamiento de conducto.
+                  Detecta problemas a tiempo y evita tratamientos complejos y costosos en el futuro.
                 </p>
               </motion.div>
 
@@ -339,10 +339,10 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Alarga la vida de tu sonrisa
+                  Salud Bucal a Largo Plazo
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Una endodoncia a tiempo mantiene tus piezas dentales fuertes y funcionales.
+                  Un enfoque integral asegura que tu sonrisa se mantenga saludable y fuerte por muchos años.
                 </p>
               </motion.div>
 
@@ -360,10 +360,10 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                  Elimina el dolor de muela de raíz
+                  Cuidado Personalizado
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Tratamientos sin dolor para recuperar tu calidad de vida de inmediato.
+                  Recibe un plan de tratamiento adaptado a tus necesidades específicas para resultados óptimos.
                 </p>
               </motion.div>
             </div>
@@ -371,7 +371,7 @@ export default function Endodoncia() {
         </section>
 
         {/* Especialidades Endodoncia Section */}
-        <div id="especialidades_endodoncia" className="absolute -mt-12"></div>
+        <div id="especialidades_odontologia" className="absolute -mt-12"></div>
         <section className="py-20 bg-gray-50">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Header */}
@@ -383,10 +383,10 @@ export default function Endodoncia() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Especialidades en Endodoncia
+                Tratamientos de Odontología Integral
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Ofrecemos tratamientos especializados con tecnología de vanguardia para cada tipo de procedimiento endodóntico.
+                Ofrecemos una amplia gama de servicios para el cuidado completo de tu salud dental.
               </p>
             </motion.div>
 
@@ -406,7 +406,7 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Endodoncia en dientes anteriores, premolares y molares
+                  Limpieza Dental Profesional
                 </h3>
               </motion.div>
 
@@ -424,7 +424,7 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Endoposte estético y endoposte metálico
+                  Obturaciones y Resinas (empastes)
                 </h3>
               </motion.div>
 
@@ -442,7 +442,7 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Retratamientos de endodoncia
+                  Selladores de Fisuras
                 </h3>
               </motion.div>
 
@@ -460,7 +460,7 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Colocación de MTA
+                  Tratamiento de Encías (Gingivitis)
                 </h3>
               </motion.div>
 
@@ -478,7 +478,7 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Retiro de endoposte
+                  Extracciones Dentales Simples
                 </h3>
               </motion.div>
 
@@ -496,7 +496,7 @@ export default function Endodoncia() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Retiro de corona dental
+                  Blanqueamiento Dental
                 </h3>
               </motion.div>
             </div>
@@ -507,7 +507,7 @@ export default function Endodoncia() {
 
 
         {/* FAQ Section */}
-        <div id="preguntas_endodoncia" className="absolute -mt-12"></div>
+        <div id="preguntas_odontologia" className="absolute -mt-12"></div>
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
@@ -519,7 +519,7 @@ export default function Endodoncia() {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Preguntas frecuentes sobre la endodoncia
+                Preguntas Frecuentes sobre Odontología Integral
               </h2>
             </motion.div>
 
@@ -527,29 +527,25 @@ export default function Endodoncia() {
             <div className="space-y-4">
               {[
                 {
-                  question: "¿Siempre necesito endodoncia si tengo dolor de muela o sensibilidad?",
-                  answer: "No siempre. El diagnóstico lo hace el endodoncista mediante pruebas clínicas y radiográficas."
+                  question: "¿Cada cuánto tiempo debo hacerme una limpieza dental?",
+                  answer: "Se recomienda una limpieza dental profesional cada 6 meses para mantener una buena salud bucal y prevenir problemas como caries y enfermedad de las encías."
                 },
                 {
-                  question: "¿La endodoncia duele?",
-                  answer: "No. Con la tecnología actual y realizada por un especialista, la endodoncia es un tratamiento indoloro que elimina el dolor de muela de forma segura."
+                  question: "¿Qué hago si tengo una emergencia dental?",
+                  answer: "Contáctanos de inmediato. Atendemos emergencias como dolor agudo, dientes rotos o abscesos para aliviar tu malestar lo antes posible."
                 },
                 {
-                  question: "¿Cuánto tiempo tarda una endodoncia?",
-                  answer: "Aproximadamente 50 minutos por pieza dental."
+                  question: "¿Son dolorosos los empastes (resinas)?",
+                  answer: "No, el procedimiento se realiza con anestesia local para que no sientas ninguna molestia. Es un tratamiento rápido y efectivo para restaurar dientes con caries."
                 },
                 {
-                  question: "¿En cuántas citas se realiza la endodoncia?",
-                  answer: "Generalmente en una sola cita. Solo en casos especiales puede requerir dos o más."
+                  question: "¿El blanqueamiento dental daña los dientes?",
+                  answer: "Realizado por un profesional, el blanqueamiento dental es un procedimiento seguro y no daña el esmalte de tus dientes. Utilizamos productos de alta calidad para garantizar los mejores resultados."
                 },
                 {
-                  question: "¿Qué cuidados debo seguir después?",
-                  answer: "Evita comer o tomar durante una hora y no mastiques con el diente tratado hasta que esté totalmente rehabilitado."
+                  question: "¿Qué es un sellador de fisuras y para qué sirve?",
+                  answer: "Es una capa protectora que se aplica en las muelas para prevenir la acumulación de placa y la formación de caries. Es un tratamiento preventivo muy eficaz, especialmente en niños."
                 },
-                {
-                  question: "¿Cuánto cuesta una endodoncia en Mazatlán?",
-                  answer: "El costo de la endodoncia depende del diagnóstico y del tipo de diente a tratar. Lo ideal es agendar una consulta con el especialista para determinar el tratamiento adecuado para tu caso."
-                }
               ].map((faq, index) => (
                 <motion.div
                   key={index}
@@ -598,7 +594,7 @@ export default function Endodoncia() {
         </section>
 
         {/* Contact Section */}
-        <div id="contacto_endodoncia" className="absolute -mt-12"></div>
+        <div id="contacto_odontologia" className="absolute -mt-12"></div>
         <section className="py-20 bg-gray-50">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-semibold">Pacifika Clínica Dental: el espacio moderno que espera por ti</h2>

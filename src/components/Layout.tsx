@@ -24,16 +24,16 @@ const navItems = [
     ]
   },
   { 
-    id: "odontologia-general", 
-    label: "Odontología\nGeneral", 
+    id: "odontologia-integral", 
+    label: "Odontología\nIntegral", 
     isPage: true, 
-    href: "/odontologia-general",
+    href: "/odontologia-integral",
     submenu: [
-      { id: "especialista", label: "Especialista", href: "/odontologia-general#especialista" },
-      { id: "beneficios", label: "Beneficios", href: "/odontologia-general#beneficios" },
-      { id: "especialidades_odontologia", label: "Especialidades", href: "/odontologia-general#especialidades_odontologia" },
-      { id: "preguntas_odontologia", label: "FAQ", href: "/odontologia-general#preguntas_odontologia" },
-      { id: "contacto_odontologia", label: "Contacto", href: "/odontologia-general#contacto_odontologia" }
+      { id: "especialista", label: "Especialista", href: "/odontologia-integral#especialista" },
+      { id: "beneficios", label: "Beneficios", href: "/odontologia-integral#beneficios" },
+      { id: "especialidades_odontologia", label: "Especialidades", href: "/odontologia-integral#especialidades_odontologia" },
+      { id: "preguntas_odontologia", label: "FAQ", href: "/odontologia-integral#preguntas_odontologia" },
+      { id: "contacto_odontologia", label: "Contacto", href: "/odontologia-integral#contacto_odontologia" }
     ]
   },
   { 
@@ -341,7 +341,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
               <h3 className="font-semibold text-lg mb-3">Nuestros Servicios</h3>
               <ul className="space-y-1 text-gray-300">
                 <li><a href="/endodoncia" className="hover:text-white transition-colors">Endodoncia</a></li>
-                <li><a href="/odontologia-general" className="hover:text-white transition-colors">Odontología General</a></li>
+                <li><a href="/odontologia-integral" className="hover:text-white transition-colors">Odontología Integral</a></li>
                 <li><a href="/ortodoncia" className="hover:text-white transition-colors">Ortodoncia</a></li>
                 <li><a href="/periodoncia" className="hover:text-white transition-colors">Periodoncia</a></li>
                 <li><a href="/restauradora-avanzada" className="hover:text-white transition-colors">Restauradora Avanzada</a></li>

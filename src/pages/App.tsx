@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
+import inst1 from '../../imagenes/instalaciones/1.webp';
+import inst2 from '../../imagenes/instalaciones/2.webp';
+import inst3 from '../../imagenes/instalaciones/DSC_2302.webp';
+import inst4 from '../../imagenes/instalaciones/DSC_2374.webp';
+import inst5 from '../../imagenes/instalaciones/DSC_6876.webp';
+import inst6 from '../../imagenes/instalaciones/FACHADA GARO.webp';
+import inst7 from '../../imagenes/instalaciones/1 (1).webp';
 
 interface FormData {
   nombre: string;
@@ -37,22 +44,37 @@ export default function App() {
     {
       title: 'Instalaciones modernas y seguras',
       text: 'Un ambiente cómodo y con la última tecnología.',
-      image: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1600&auto=format&fit=crop'
+      image: inst1
     },
     {
       title: 'Instalaciones modernas y seguras',
       text: 'Sala de espera climatizada y confortable',
-      image: 'https://images.unsplash.com/photo-1581594693700-89e65d6d6b53?q=80&w=1600&auto=format&fit=crop'
+      image: inst2
     },
     {
       title: 'Instalaciones modernas y seguras',
       text: 'Estacionamiento privado para pacientes',
-      image: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1600&auto=format&fit=crop'
+      image: inst3
     },
     {
       title: 'Instalaciones modernas y seguras',
       text: 'Consultorios particulares con tecnología avanzada',
-      image: 'https://images.unsplash.com/photo-1581594693700-89e65d6d6b53?q=80&w=1600&auto=format&fit=crop'
+      image: inst4
+    },
+    {
+      title: 'Tecnología y equipo moderno',
+      text: 'Equipamiento actualizado para tu seguridad y comodidad.',
+      image: inst5
+    },
+    {
+      title: 'Fachada de la clínica',
+      text: 'Ubicación accesible y fachada renovada.',
+      image: inst6
+    },
+    {
+      title: 'Áreas comunes y recepción',
+      text: 'Espacios amplios y confortables para tu visita.',
+      image: inst7
     }
   ];
 
@@ -404,11 +426,11 @@ export default function App() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                { nombre: 'Dr. Juan Lizarraga', especialidad: 'Endodoncia' },
-                { nombre: 'Dra. Krizia Zamudio', especialidad: 'Odontología General' },
-                { nombre: 'Dr. Mario Díaz', especialidad: 'Periodoncia e Implantología General' },
-                { nombre: 'Dr. Luis Osuna', especialidad: 'Odontología Restauradora Avanzada' },
-                { nombre: 'Dra. Erika Bernal', especialidad: 'Ortodoncia' },
+                { nombre: 'Dr. Juan Lizarraga', especialidad: 'Endodoncia', genero: 'male' },
+                { nombre: 'Dr. Luis Osuna', especialidad: 'Odontología General', genero: 'male' },
+                { nombre: 'Dr. Mario Díaz', especialidad: 'Periodoncia e Implantología General', genero: 'male' },
+                { nombre: 'Dra. Krizia Zamudio', especialidad: 'Odontología Restauradora Avanzada', genero: 'female' },
+                { nombre: 'Dra. Erika Bernal', especialidad: 'Ortodoncia', genero: 'female' },
               ].map((doc, index) => (
                 <motion.div
                   key={doc.nombre}
@@ -421,7 +443,7 @@ export default function App() {
                   <div className="p-6 text-center">
                     <div className="w-24 h-24 mx-auto rounded-full border-2 border-primary-500 bg-primary-50 overflow-hidden">
                       <img
-                        src={`https://i.pravatar.cc/192?u=${encodeURIComponent(doc.nombre)}`}
+                        src={`https://xsgames.co/randomusers/assets/avatars/${doc.genero}/${index + 1}.jpg`}
                         alt={doc.nombre}
                         className="w-full h-full object-cover"
                         loading="lazy"
