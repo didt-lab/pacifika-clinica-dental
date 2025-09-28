@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
+import resFachada from '../../imagenes/instalaciones/FACHADA GARO.webp';
+import res2 from '../../imagenes/instalaciones/2.webp';
+import res1r from '../../imagenes/instalaciones/1-r.jpg';
+import res2rr from '../../imagenes/instalaciones/2-rr.webp';
+import res3r from '../../imagenes/instalaciones/3-r.webp';
 
 export default function RestauradoraAvanzada() {
   // Parallax scroll effect for hero background
@@ -13,6 +18,18 @@ export default function RestauradoraAvanzada() {
   const toggleAccordion = (index: number) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
+
+  // Galería Restauradora
+  const galleryRes = [
+    { image: resFachada, alt: 'Fachada Pacifika' },
+    { image: res2, alt: 'Instalaciones 2' },
+    { image: res1r, alt: 'Área clínica 1-r' },
+    { image: res2rr, alt: 'Área clínica 2-rr' },
+    { image: res3r, alt: 'Área clínica 3-r' },
+  ];
+  const [galleryIndex, setGalleryIndex] = useState(0);
+  const nextGallery = () => setGalleryIndex((p) => (p + 1) % galleryRes.length);
+  const prevGallery = () => setGalleryIndex((p) => (p - 1 + galleryRes.length) % galleryRes.length);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -368,6 +385,58 @@ export default function RestauradoraAvanzada() {
           </div>
         </section>
 
+        {/* Galería de Fotos */}
+        <section className="py-16 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-0 items-stretch rounded-[18px] overflow-hidden shadow-lg border border-gray-100">
+              {/* Panel Izquierdo */}
+              <div className="lg:col-span-1 bg-primary-50 p-8 sm:p-10 flex flex-col justify-center">
+                <motion.div
+                  key={`galeria-panel-res-${galleryIndex}`}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary-700 mb-2">Galería</p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Nuestras instalaciones</h2>
+                  <p className="mt-3 text-gray-700 text-lg">Explora recepción, consultorios y áreas clínicas.</p>
+                  <div className="mt-6 flex items-center gap-3">
+                    <button aria-label="Anterior" onClick={prevGallery} className="p-2.5 rounded-full bg-white border border-primary-200 text-gray-800 hover:bg-primary-100 transition">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="15,6 9,12 15,18" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    <button aria-label="Siguiente" onClick={nextGallery} className="p-2.5 rounded-full bg-white border border-primary-200 text-gray-800 hover:bg-primary-100 transition">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="9,6 15,12 9,18" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    <div className="ml-2 flex gap-2">
+                      {galleryRes.map((_, i) => (
+                        <span key={i} className={`w-2 h-2 rounded-full ${i === galleryIndex ? 'bg-primary-600' : 'bg-primary-200'}`}></span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              {/* Imagen Derecha */}
+              <div className="lg:col-span-1 bg-white">
+                <motion.div
+                  key={`galeria-img-res-${galleryIndex}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.35 }}
+                  className="h-[380px] md:h-[480px] w-full"
+                >
+                  <img
+                    src={galleryRes[galleryIndex].image}
+                    alt={galleryRes[galleryIndex].alt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Alineadores Dentales Section (reemplazado por Beneficios) */}
         <div id="alineadores_periodoncia" className="absolute -mt-12"></div>
         <section className="py-20 bg-white">
@@ -429,6 +498,58 @@ export default function RestauradoraAvanzada() {
 
 
 
+
+        {/* Galería de Fotos */}
+        <section className="py-16 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-0 items-stretch rounded-[18px] overflow-hidden shadow-lg border border-gray-100">
+              {/* Panel Izquierdo */}
+              <div className="lg:col-span-1 bg-primary-50 p-8 sm:p-10 flex flex-col justify-center">
+                <motion.div
+                  key={`galeria-panel-res-${galleryIndex}`}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary-700 mb-2">Galería</p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Nuestras instalaciones</h2>
+                  <p className="mt-3 text-gray-700 text-lg">Explora recepción, consultorios y áreas clínicas.</p>
+                  <div className="mt-6 flex items-center gap-3">
+                    <button aria-label="Anterior" onClick={prevGallery} className="p-2.5 rounded-full bg-white border border-primary-200 text-gray-800 hover:bg-primary-100 transition">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="15,6 9,12 15,18" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    <button aria-label="Siguiente" onClick={nextGallery} className="p-2.5 rounded-full bg-white border border-primary-200 text-gray-800 hover:bg-primary-100 transition">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="9,6 15,12 9,18" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    <div className="ml-2 flex gap-2">
+                      {galleryRes.map((_, i) => (
+                        <span key={i} className={`w-2 h-2 rounded-full ${i === galleryIndex ? 'bg-primary-600' : 'bg-primary-200'}`}></span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              {/* Imagen Derecha */}
+              <div className="lg:col-span-1 bg-white">
+                <motion.div
+                  key={`galeria-img-res-${galleryIndex}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.35 }}
+                  className="h-[380px] md:h-[480px] w-full"
+                >
+                  <img
+                    src={galleryRes[galleryIndex].image}
+                    alt={galleryRes[galleryIndex].alt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* FAQ Section */}
         <div id="preguntas_periodoncia" className="absolute -mt-12"></div>

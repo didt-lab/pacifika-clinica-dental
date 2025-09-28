@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
+import imgFachada from '../../imagenes/instalaciones/FACHADA GARO.webp';
+import img2 from '../../imagenes/instalaciones/2.webp';
+import img2302 from '../../imagenes/instalaciones/DSC_2302.webp';
+import img2374 from '../../imagenes/instalaciones/DSC_2374.webp';
 
 export default function Endodoncia() {
   // Parallax scroll effect for hero background
@@ -13,6 +17,17 @@ export default function Endodoncia() {
   const toggleAccordion = (index: number) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
+
+  // Gallery slider state (Endodoncia)
+  const galleryEndo = [
+    { image: imgFachada, alt: 'Fachada Pacifika' },
+    { image: img2, alt: 'Instalaciones 2' },
+    { image: img2302, alt: 'Instalaciones clínicas' },
+    { image: img2374, alt: 'Consultorios' },
+  ];
+  const [galleryIndex, setGalleryIndex] = useState(0);
+  const nextGallery = () => setGalleryIndex((p) => (p + 1) % galleryEndo.length);
+  const prevGallery = () => setGalleryIndex((p) => (p - 1 + galleryEndo.length) % galleryEndo.length);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -398,16 +413,19 @@ export default function Endodoncia() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Imagen Pendiente</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Endodoncia en dientes anteriores, premolares y molares</h3>
+                  <p className="text-gray-600 mb-4">Tratamiento de conducto para eliminar la infección y conservar dientes dañados por caries o dolor de muela.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Elimina dolor y sensibilidad</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Evita la extracción dental</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Conserva dientes anteriores, premolares y molares</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Endodoncia en dientes anteriores, premolares y molares
-                </h3>
               </motion.div>
 
               {/* Card 2 */}
@@ -416,16 +434,19 @@ export default function Endodoncia() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Imagen Pendiente</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Endoposte estético y endoposte metálico</h3>
+                  <p className="text-gray-600 mb-4">Refuerzan dientes tratados con endodoncia para devolver resistencia y funcionalidad.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Endoposte estético con apariencia natural</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Endoposte metálico de gran durabilidad</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Mejora la estabilidad del diente restaurado</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Endoposte estético y endoposte metálico
-                </h3>
               </motion.div>
 
               {/* Card 3 */}
@@ -434,16 +455,19 @@ export default function Endodoncia() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Imagen Pendiente</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Retratamientos de endodoncia</h3>
+                  <p className="text-gray-600 mb-4">Solución cuando un tratamiento de conducto previo no tuvo éxito o presenta complicaciones.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Elimina infección persistente</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Conserva la pieza dental</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Alternativa antes de extracción</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Retratamientos de endodoncia
-                </h3>
               </motion.div>
 
               {/* Card 4 */}
@@ -452,16 +476,19 @@ export default function Endodoncia() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Imagen Pendiente</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Colocación de MTA</h3>
+                  <p className="text-gray-600 mb-4">Uso de material biocompatible para reparar daños y favorecer la cicatrización dental.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Sella perforaciones radiculares</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Protege la raíz del diente</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Mejora el pronóstico del tratamiento</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Colocación de MTA
-                </h3>
               </motion.div>
 
               {/* Card 5 */}
@@ -470,16 +497,19 @@ export default function Endodoncia() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Imagen Pendiente</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Retiro de endoposte</h3>
+                  <p className="text-gray-600 mb-4">Procedimiento para acceder nuevamente al conducto y realizar un nuevo tratamiento.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Permite repetir endodoncia</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Conserva la estructura dental</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Preparación segura para retratamiento</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Retiro de endoposte
-                </h3>
               </motion.div>
 
               {/* Card 6 */}
@@ -488,16 +518,19 @@ export default function Endodoncia() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Imagen Pendiente</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Retiro de corona dental</h3>
+                  <p className="text-gray-600 mb-4">Se retira la corona para acceder al diente y realizar endodoncia o nuevas restauraciones.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Facilita un diagnóstico completo</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Permite retratamientos seguros</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Reemplazo por nueva corona cuando es necesario</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Retiro de corona dental
-                </h3>
               </motion.div>
             </div>
           </div>
@@ -505,6 +538,60 @@ export default function Endodoncia() {
 
 
 
+
+        {/* Galería de Fotos */}
+        <section className="py-16 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-0 items-stretch rounded-[18px] overflow-hidden shadow-lg border border-gray-100">
+              {/* Panel Izquierdo */}
+              <div className="lg:col-span-1 bg-primary-50 p-8 sm:p-10 flex flex-col justify-center">
+                <motion.div
+                  key={`galeria-panel-${galleryIndex}`}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.35 }}
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary-700 mb-2">Galería</p>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">Nuestras instalaciones</h2>
+                  <p className="mt-3 text-gray-700 text-lg">Conoce nuestros espacios: recepción, consultorios y áreas clínicas.</p>
+
+                  <div className="mt-6 flex items-center gap-3">
+                    <button aria-label="Anterior" onClick={prevGallery} className="p-2.5 rounded-full bg-white border border-primary-200 text-gray-800 hover:bg-primary-100 transition">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="15,6 9,12 15,18" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    <button aria-label="Siguiente" onClick={nextGallery} className="p-2.5 rounded-full bg-white border border-primary-200 text-gray-800 hover:bg-primary-100 transition">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><polyline points="9,6 15,12 9,18" stroke="currentColor" strokeWidth="2"/></svg>
+                    </button>
+                    <div className="ml-2 flex gap-2">
+                      {galleryEndo.map((_, i) => (
+                        <span key={i} className={`w-2 h-2 rounded-full ${i === galleryIndex ? 'bg-primary-600' : 'bg-primary-200'}`}></span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Imagen Derecha */}
+              <div className="lg:col-span-1 bg-white">
+                <motion.div
+                  key={`galeria-img-${galleryIndex}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.35 }}
+                  className="h-[380px] md:h-[480px] w-full"
+                >
+                  <img
+                    src={galleryEndo[galleryIndex].image}
+                    alt={galleryEndo[galleryIndex].alt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* FAQ Section */}
         <div id="preguntas_endodoncia" className="absolute -mt-12"></div>

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
-import inst1 from '../../imagenes/instalaciones/1.webp';
+import inst1 from '../../imagenes/instalaciones/DSC_6878.webp';
 import inst2 from '../../imagenes/instalaciones/2.webp';
 import inst3 from '../../imagenes/instalaciones/DSC_2302.webp';
 import inst4 from '../../imagenes/instalaciones/DSC_2374.webp';
 import inst5 from '../../imagenes/instalaciones/DSC_6876.webp';
 import inst6 from '../../imagenes/instalaciones/FACHADA GARO.webp';
-import inst7 from '../../imagenes/instalaciones/1 (1).webp';
+import inst7 from '../../imagenes/instalaciones/DSC_6903.webp';
 
 interface FormData {
   nombre: string;
