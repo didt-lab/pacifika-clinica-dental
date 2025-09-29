@@ -131,7 +131,7 @@ export default function RestauradoraAvanzada() {
                 backgroundImage: 'url(/imagenes/restauradora_avanzada.jpg)',
               }}
             />
-            <div className="absolute inset-0 w-full h-[120%] bg-slate-900/70"></div>
+            <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">

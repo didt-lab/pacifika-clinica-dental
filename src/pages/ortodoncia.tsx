@@ -126,12 +126,13 @@ export default function Ortodoncia() {
             style={{ y: backgroundY, willChange: 'transform' }}
           >
             <div
-              className="w-full h-[120%] bg-cover bg-center bg-no-repeat"
+              className="w-full h-[120%] bg-cover bg-no-repeat"
               style={{
                 backgroundImage: 'url(/imagenes/ortodoncia.jpg)',
+                backgroundPosition: '60% center',
               }}
             />
-            <div className="absolute inset-0 w-full h-[120%] bg-slate-900/70"></div>
+            <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
@@ -139,13 +140,13 @@ export default function Ortodoncia() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="max-w-4xl"
+                className="max-w-3xl md:max-w-2xl"
               >
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                  Ortodoncia en Mazatlán: <span className="text-primary-500">para transformar tu sonrisa</span>
+                  Ortodoncia en Mazatlán: <span className="text-primary-500">para transformar tu <p>sonrisa</p></span>
                 </h1>
                 <p className="text-xl mb-8 leading-relaxed text-gray-300">
-                Con brackets zafiro, brackets estéticos y alineadores invisibles, transforma tu sonrisa con tratamientos modernos y personalizados                </p>
+                Con brackets zafiro, brackets estéticos y alineadores <p>invisibles, transforma tu sonrisa con tratamientos modernos y personalizados</p>                </p>
                 <div className="flex justify-start">
                   <a
                     href="https://wa.me/526699928700?text=Hola%2C%20necesito%20una%20consulta%20de%20ortodoncia"

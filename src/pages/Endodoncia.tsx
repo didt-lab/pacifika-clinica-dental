@@ -129,7 +129,7 @@ export default function Endodoncia() {
                 backgroundImage: 'url(/imagenes/Endodoncia.jpg)',
               }}
             />
-            <div className="absolute inset-0 w-full h-[120%] bg-slate-900/70"></div>
+            <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
@@ -140,10 +140,10 @@ export default function Endodoncia() {
                 className="max-w-4xl"
               >
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                  Endodoncia en Mazatlán: <span className="text-primary-500">tratamiento para dolor de muela sin dolor</span>
+                  Endodoncia en Mazatlán: <span className="text-primary-500">tratamiento para dolor <p>de muela sin dolor</p></span>
                 </h1>
                 <p className="text-xl mb-8 leading-relaxed text-gray-300">
-                  Contamos con más de 13 años de experiencia en endodoncia, tecnología de vanguardia y atención personalizada para cuidar tu salud bucal en un ambiente seguro y moderno.
+                  Contamos con más de 13 años de experiencia en endodoncia, tecnología de <p> vanguardia y atención personalizada para cuidar tu salud bucal</p> en un ambiente seguro y moderno.
                 </p>
                 <div className="flex justify-start">
                   <a

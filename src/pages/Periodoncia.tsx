@@ -5,6 +5,13 @@ import perFachada from '../../imagenes/instalaciones/FACHADA GARO.webp';
 import per2 from '../../imagenes/instalaciones/2.webp';
 import per1p from '../../imagenes/instalaciones/1-p.jpg';
 import per3p from '../../imagenes/instalaciones/3-p.webp';
+import imgConsulta from '../../imagenes/consulta_periodontal.webp';
+import imgLimpieza from '../../imagenes/limpieza_profunda.webp';
+import imgGingivectomia from '../../imagenes/gingivectomia.webp';
+import imgRecubrimiento from '../../imagenes/recubrimiento_radicular.webp';
+import imgImplantes from '../../imagenes/implantes_dentales.webp';
+import imgA from '../../imagenes/aprato_ortodoncia.webp';
+import imgB from '../../imagenes/ortodoncia_placas.webp';
 
 export default function Periodoncia() {
   // Parallax scroll effect for hero background
@@ -129,7 +136,7 @@ export default function Periodoncia() {
                 backgroundImage: 'url(/imagenes/Periodoncia.jpg)',
               }}
             />
-            <div className="absolute inset-0 w-full h-[120%] bg-slate-900/70"></div>
+            <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
@@ -140,10 +147,11 @@ export default function Periodoncia() {
                 className="max-w-4xl"
               >
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                  Periodoncia en Mazatlán: <span className="text-primary-500">salud bucal integral y especializada</span>
+                  Periodoncia en Mazatlán: <span className="text-primary-500">Tratamientos para <p>cuidar tus encías y</p> dientes
+                  </span>
                 </h1>
                 <p className="text-xl mb-8 leading-relaxed text-gray-300">
-                  Contamos con más de 13 años de experiencia en periodoncia, tecnología de vanguardia y atención personalizada para cuidar tu salud bucal en un ambiente seguro y moderno.
+                Especialista en salud periodontal. Tratamientos modernos como <p> <b> limpieza profunda, raspado y alisado radicular, gingivectomías,</b></p> recubrimientos radiculares, implantes dentales y regeneración ósea.
                 </p>
                 <div className="flex justify-start">
                   <a
@@ -233,7 +241,7 @@ export default function Periodoncia() {
                       viewport={{ once: true }}
                     >
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        El <b>Dr. Juan Manuel Lizárraga</b> es especialista en periodoncia con formación en la Universidad Autónoma de Sinaloa y la Universidad Autónoma de Baja California. Con más de 15 años de experiencia, ofrece tratamientos especializados para mantener la salud de tus encías y prevenir la pérdida de dientes.
+                      El <b>Dr. Mario Cristerna</b> es especialista en Periodoncia con 14 años de experiencia clínica. Egresado de la Universidad Autónoma de Sinaloa (UAS) y con especialidad en la Universidad Quetzalcóatl de Irapuato, cuenta con <b>certificación vigente ante el Colegio Mexicano de Periodoncia (CMP)</b> y es miembro activo de la <b>Asociación Mexicana de Periodoncia (AMP)</b>. Su práctica se centra en el diagnóstico y tratamiento integral de enfermedades de las <b>encías, limpieza profunda, cirugías periodontales, recubrimientos radiculares, regeneración ósea e implantes dentales</b>, ofreciendo atención personalizada y de alto nivel profesional.
                       </p>
                     </motion.div>
 
@@ -397,122 +405,162 @@ export default function Periodoncia() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Especialidades en Periodoncia
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                Tratamientos de periodoncia disponibles
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Ofrecemos tratamientos especializados con tecnología de vanguardia para cada tipo de procedimiento periodontal.
-              </p>
             </motion.div>
+            {/* Cards Grid - estilo Ortodoncia */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Consulta periodontal */}
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.05 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img src={imgConsulta} alt="Consulta periodontal" className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Consulta periodontal</h3>
+                  <p className="text-gray-600 mb-4">Valoración clínica y radiográfica para emitir un diagnóstico.</p>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20de%20periodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                </div>
+              </motion.article>
 
-            {/* Cards Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card 1 */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
+              {/* Limpieza profunda dental */}
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <img src={imgLimpieza} alt="Limpieza profunda dental" className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Limpieza profunda dental</h3>
+                  <p className="text-gray-600 mb-4">Conocida como raspado y alisado radicular, elimina sarro y bacterias debajo de la encía para frenar la gingivitis y periodontitis.</p>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20de%20limpieza%20profunda" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Tratamiento de gingivitis
-                </h3>
-              </motion.div>
+              </motion.article>
 
-              {/* Card 2 */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
+              {/* Gingivectomía */}
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img src={imgGingivectomia} alt="Gingivectomía" className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Gingivectomía</h3>
+                  <p className="text-gray-600 mb-4">Cirugía de encías para recortar y dar forma a los tejidos inflamados o excesivos.</p>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20gingivectom%C3%ADa" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                </div>
+              </motion.article>
+
+              {/* Cirugía de recubrimiento radicular (Injerto de encía) */}
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <img src={imgRecubrimiento} alt="Cirugía de recubrimiento radicular (Injerto de encía)" className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Cirugía de recubrimiento radicular (Injerto de encía)</h3>
+                  <p className="text-gray-600 mb-4">Tratamiento para encías retraídas que expone la raíz del diente, devolviendo estética y protección.</p>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20injerto%20de%20enc%C3%ADa" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Tratamiento de periodontitis
-                </h3>
-              </motion.div>
+              </motion.article>
 
-              {/* Card 3 */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
+              {/* Implantes dentales */}
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img src={imgImplantes} alt="Implantes dentales" className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Implantes dentales</h3>
+                  <p className="text-gray-600 mb-4">Solución segura y duradera para reemplazar dientes perdidos.</p>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20implantes%20dentales" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                </div>
+              </motion.article>
+
+              {/* Cirugía de regeneración ósea */}
+              <motion.article
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+                <div className="w-full h-44 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">Imagen Pendiente</div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Cirugía de regeneración ósea</h3>
+                  <p className="text-gray-600 mb-4">Procedimiento para recuperar el hueso perdido y poder colocar implantes.</p>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20regeneraci%C3%B3n%20%C3%B3sea" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Cirugía periodontal
-                </h3>
-              </motion.div>
+              </motion.article>
+            </div>
+          </div>
+        </section>
 
-              {/* Card 4 */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
+        {/* Beneficios de tratar a tiempo tus encías */}
+        <section className="py-20 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-5 gap-10 items-center">
+              {/* Images Left */}
+              <div className="lg:col-span-2">
+                <div className="grid grid-cols-2 gap-4">
+                  <motion.img
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    src={imgA}
+                    alt="Imagen A"
+                    className="w-full h-60 sm:h-72 lg:h-[420px] object-cover rounded-2xl shadow-lg"
+                  />
+                  <motion.img
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.15 }}
+                    viewport={{ once: true }}
+                    src={imgB}
+                    alt="Imagen B"
+                    className="w-full h-60 sm:h-72 lg:h-[420px] object-cover rounded-2xl shadow-lg"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Mantenimiento periodontal
-                </h3>
-              </motion.div>
+              </div>
 
-              {/* Card 5 */}
+              {/* Content Right */}
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
+                className="lg:col-span-3"
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Injerto de encía
-                </h3>
-              </motion.div>
-
-              {/* Card 6 */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 mx-auto group-hover:bg-primary-200 transition-colors">
-                  <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.5 2 6 4.5 6 8c0 2.5 1.5 4.5 3 6l3 8 3-8c1.5-1.5 3-3.5 3-6 0-3.5-2.5-6-6-6zm0 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">
-                  Regeneración ósea
-                </h3>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Beneficios de tratar a tiempo tus encías</h2>
+                <ul className="space-y-3 text-lg text-gray-700 mb-8">
+                  <li className="flex items-start gap-3"><span className="mt-1 w-2 h-2 rounded-full bg-primary-500"></span> Prevención de pérdida dental</li>
+                  <li className="flex items-start gap-3"><span className="mt-1 w-2 h-2 rounded-full bg-primary-500"></span> Eliminación del dolor y sangrado</li>
+                  <li className="flex items-start gap-3"><span className="mt-1 w-2 h-2 rounded-full bg-primary-500"></span> Sonrisa más estética y saludable</li>
+                  <li className="flex items-start gap-3"><span className="mt-1 w-2 h-2 rounded-full bg-primary-500"></span> Mejora de la función al masticar</li>
+                </ul>
+                <a
+                  href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20de%20periodoncia"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold shadow-lg transition-all"
+                >
+                  Agendar valoración
+                </a>
               </motion.div>
             </div>
           </div>
