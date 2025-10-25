@@ -11,19 +11,6 @@ const scrollToId = (id: string) => {
 const navItems = [
   { id: "inicio", label: "Inicio", isPage: false, href: "/" },
   { 
-    id: "endodoncia", 
-    label: "Endodoncia", 
-    isPage: true, 
-    href: "/endodoncia",
-    submenu: [
-      { id: "especialista", label: "Especialista", href: "/endodoncia#especialista" },
-      { id: "beneficios", label: "Beneficios", href: "/endodoncia#beneficios" },
-      { id: "especialidades_endodoncia", label: "Especialidades", href: "/endodoncia#especialidades_endodoncia" },
-      { id: "preguntas_endodoncia", label: "FAQ", href: "/endodoncia#preguntas_endodoncia" },
-      { id: "contacto_endodoncia", label: "Contacto", href: "/endodoncia#contacto_endodoncia" }
-    ]
-  },
-  { 
     id: "odontologia-integral", 
     label: "Odontología\nIntegral", 
     isPage: true, 
@@ -37,21 +24,34 @@ const navItems = [
     ]
   },
   { 
-    id: "ortodoncia", 
-    label: "Ortodoncia", 
+    id: "restauradora-avanzada", 
+    label: "Restauradora\nAvanzada", 
     isPage: true, 
-    href: "/ortodoncia",
+    href: "/restauradora-avanzada",
     submenu: [
-      { id: "especialista", label: "Especialista", href: "/ortodoncia#especialista" },
-      { id: "tratamientos_ortodoncia", label: "Tratamientos", href: "/ortodoncia#tratamientos_ortodoncia" },
-      { id: "alineadores_ortodoncia", label: "Alineadores", href: "/ortodoncia#alineadores_ortodoncia" },
-      { id: "preguntas_ortodoncia", label: "FAQ", href: "/ortodoncia#preguntas_ortodoncia" },
-      { id: "contacto_ortodoncia", label: "Contacto", href: "/ortodoncia#contacto_ortodoncia" }
+      { id: "especialista", label: "Especialista", href: "/restauradora-avanzada#especialista" },
+      { id: "tratamientos_periodoncia", label: "Tratamientos", href: "/restauradora-avanzada#tratamientos_periodoncia" },
+      { id: "alineadores_periodoncia", label: "Beneficios", href: "/restauradora-avanzada#alineadores_periodoncia" },
+      { id: "preguntas_periodoncia", label: "FAQ", href: "/restauradora-avanzada#preguntas_periodoncia" },
+      { id: "contacto_periodoncia", label: "Contacto", href: "/restauradora-avanzada#contacto_periodoncia" }
+    ]
+  },
+  { 
+    id: "endodoncia", 
+    label: "Endodoncia", 
+    isPage: true, 
+    href: "/endodoncia",
+    submenu: [
+      { id: "especialista", label: "Especialista", href: "/endodoncia#especialista" },
+      { id: "beneficios", label: "Beneficios", href: "/endodoncia#beneficios" },
+      { id: "especialidades_endodoncia", label: "Especialidades", href: "/endodoncia#especialidades_endodoncia" },
+      { id: "preguntas_endodoncia", label: "FAQ", href: "/endodoncia#preguntas_endodoncia" },
+      { id: "contacto_endodoncia", label: "Contacto", href: "/endodoncia#contacto_endodoncia" }
     ]
   },
   { 
     id: "periodoncia", 
-    label: "Periodoncia", 
+    label: "Periodoncia\nImplantes", 
     isPage: true, 
     href: "/periodoncia",
     submenu: [
@@ -63,16 +63,16 @@ const navItems = [
     ]
   },
   { 
-    id: "restauradora-avanzada", 
-    label: "Restauradora\nAvanzada", 
+    id: "ortodoncia", 
+    label: "Ortodoncia", 
     isPage: true, 
-    href: "/restauradora-avanzada",
+    href: "/ortodoncia",
     submenu: [
-      { id: "especialista", label: "Especialista", href: "/restauradora-avanzada#especialista" },
-      { id: "tratamientos_periodoncia", label: "Tratamientos", href: "/restauradora-avanzada#tratamientos_periodoncia" },
-      { id: "alineadores_periodoncia", label: "Beneficios", href: "/restauradora-avanzada#alineadores_periodoncia" },
-      { id: "preguntas_periodoncia", label: "FAQ", href: "/restauradora-avanzada#preguntas_periodoncia" },
-      { id: "contacto_periodoncia", label: "Contacto", href: "/restauradora-avanzada#contacto_periodoncia" }
+      { id: "especialista", label: "Especialista", href: "/ortodoncia#especialista" },
+      { id: "tratamientos_ortodoncia", label: "Tratamientos", href: "/ortodoncia#tratamientos_ortodoncia" },
+      { id: "alineadores_ortodoncia", label: "Alineadores", href: "/ortodoncia#alineadores_ortodoncia" },
+      { id: "preguntas_ortodoncia", label: "FAQ", href: "/ortodoncia#preguntas_ortodoncia" },
+      { id: "contacto_ortodoncia", label: "Contacto", href: "/ortodoncia#contacto_ortodoncia" }
     ]
   },
   { id: "contacto", label: "Contacto", isPage: false, href: "/#contacto" },
@@ -177,7 +177,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
             </a>
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/526699928700?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta"
+              href="https://api.whatsapp.com/send?phone=5216691581164&text=Hola%2C%20vengo%20del%20sitio%20web%20y%20quiero%20agendar%20una%20consulta"
               target="_blank"
               rel="noreferrer"
               className="hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 text-sm font-medium shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105"
@@ -270,7 +270,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
                   Llamar
                 </a>
                 <a
-                  href="https://wa.me/526699928700?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta"
+                  href="https://api.whatsapp.com/send?phone=5216691581164&text=Hola%2C%20vengo%20del%20sitio%20web%20y%20quiero%20agendar%20una%20consulta"
                   target="_blank"
                   rel="noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 text-sm font-medium shadow-lg transition-colors"
@@ -340,11 +340,11 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
             <div className="text-center md:text-left">
               <h3 className="font-semibold text-lg mb-3">Nuestros Servicios</h3>
               <ul className="space-y-1 text-gray-300">
-                <li><a href="/endodoncia" className="hover:text-white transition-colors">Endodoncia</a></li>
                 <li><a href="/odontologia-integral" className="hover:text-white transition-colors">Odontología Integral</a></li>
-                <li><a href="/ortodoncia" className="hover:text-white transition-colors">Ortodoncia</a></li>
-                <li><a href="/periodoncia" className="hover:text-white transition-colors">Periodoncia</a></li>
                 <li><a href="/restauradora-avanzada" className="hover:text-white transition-colors">Restauradora Avanzada</a></li>
+                <li><a href="/endodoncia" className="hover:text-white transition-colors">Endodoncia</a></li>
+                <li><a href="/periodoncia" className="hover:text-white transition-colors">Periodoncia e Implantes</a></li>
+                <li><a href="/ortodoncia" className="hover:text-white transition-colors">Ortodoncia</a></li>
                 <li><a href="/#servicios" className="hover:text-white transition-colors">Ver Todos</a></li>
               </ul>
             </div>

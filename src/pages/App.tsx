@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
-import inst1 from '../../imagenes/instalaciones/DSC_6878.webp';
+import fachadaGaro from '../../imagenes/instalaciones/FACHADA GARO.webp';
 import inst2 from '../../imagenes/instalaciones/2.webp';
-import inst3 from '../../imagenes/instalaciones/DSC_2302.webp';
-import inst4 from '../../imagenes/instalaciones/DSC_2374.webp';
-import inst5 from '../../imagenes/instalaciones/DSC_6876.webp';
-import inst6 from '../../imagenes/instalaciones/FACHADA GARO.webp';
-import inst7 from '../../imagenes/instalaciones/DSC_6903.webp';
+import inst3p from '../../imagenes/instalaciones/3-p.webp';
+import inst1r from '../../imagenes/instalaciones/1-r.jpg';
+import inst2374 from '../../imagenes/instalaciones/DSC_2374.webp';
+import inst2302 from '../../imagenes/instalaciones/DSC_2302.webp';
+import inst1p from '../../imagenes/instalaciones/1-p.jpg';
+import inst6878 from '../../imagenes/instalaciones/DSC_6878.webp';
 
 interface FormData {
   nombre: string;
@@ -42,9 +43,9 @@ export default function App() {
   // Instalaciones slider state
   const slidesInstalaciones = [
     {
-      title: 'Instalaciones modernas y seguras',
-      text: 'Un ambiente cómodo y con la última tecnología.',
-      image: inst1
+      title: 'Fachada de la clínica',
+      text: 'Ubicación accesible y fachada renovada.',
+      image: fachadaGaro
     },
     {
       title: 'Instalaciones modernas y seguras',
@@ -53,28 +54,33 @@ export default function App() {
     },
     {
       title: 'Instalaciones modernas y seguras',
-      text: 'Estacionamiento privado para pacientes',
-      image: inst3
-    },
-    {
-      title: 'Instalaciones modernas y seguras',
-      text: 'Consultorios particulares con tecnología avanzada',
-      image: inst4
+      text: 'Un ambiente cómodo y con la última tecnología.',
+      image: inst3p
     },
     {
       title: 'Tecnología y equipo moderno',
       text: 'Equipamiento actualizado para tu seguridad y comodidad.',
-      image: inst5
+      image: inst1r
     },
     {
-      title: 'Fachada de la clínica',
-      text: 'Ubicación accesible y fachada renovada.',
-      image: inst6
+      title: 'Instalaciones modernas y seguras',
+      text: 'Consultorios particulares con tecnología avanzada',
+      image: inst2374
+    },
+    {
+      title: 'Instalaciones modernas y seguras',
+      text: 'Estacionamiento privado para pacientes',
+      image: inst2302
     },
     {
       title: 'Áreas comunes y recepción',
       text: 'Espacios amplios y confortables para tu visita.',
-      image: inst7
+      image: inst1p
+    },
+    {
+      title: 'Instalaciones modernas y seguras',
+      text: 'Un ambiente cómodo y con la última tecnología.',
+      image: inst6878
     }
   ];
 
@@ -237,11 +243,11 @@ export default function App() {
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-left">
                 Clínica Dental en Mazatlán:
-                <span className="block text-primary-500">tu sonrisa en las mejores manos</span>
+                <span className="block text-primary-500">tu sonrisa en manos de verdaderos </span><span className="block text-primary-500">especialistas</span>
               </h1>
               
               <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl leading-relaxed text-left">
-                Atención personalizada, tratamientos integrales, instalaciones de primer nivel y tecnología avanzada para la salud de tu sonrisa.
+                Atención personalizada, tratamientos integrales, instalaciones de primer nivel y la mejor tecnología para la salud de tu sonrisa.
               </p>
 
               <motion.div
@@ -251,7 +257,7 @@ export default function App() {
                 className="flex flex-col sm:flex-row gap-4 justify-start items-start max-w-md"
               >
                 <a
-                  href="https://wa.me/526699928700?text=Hola,%20me%20gustaría%20agendar%20una%20consulta"
+                  href="https://api.whatsapp.com/send?phone=5216691581164&text=Hola%2C%20vengo%20del%20sitio%20web%20y%20quiero%20agendar%20una%20consulta"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
@@ -322,7 +328,7 @@ export default function App() {
                 </h2>
                 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Con más de 13 años de experiencia, nuestra clínica dental en Mazatlán cuenta con especialistas en ortodoncia, endodoncia, odontología general, restauradora avanzada y periodoncia, dedicados a ofrecerte tratamientos de alta calidad y resultados que transforman sonrisas.
+                  Con más de 15 años de experiencia, nuestra clínica Dental en Mazatlán, cuenta con especialistas de tiempo completo en ortodoncia endodoncia, odontología integral, restauradora avanzada, periodoncia e implantes dedicados a ofrecerte, tratamientos de alta, calidad y resultados que transforman sonrisas
                 </p>
 
                 <motion.div
@@ -369,6 +375,11 @@ export default function App() {
                 { name: 'Diseño de Sonrisa', icon: null },
                 { name: 'Carillas Dentales', icon: '/imagenes/iconos/carilla-dental.png' },
                 { name: 'Prótesis Dentales', icon: '/imagenes/iconos/protesis_dentales.png' },
+                { name: 'Resina dental', icon: '/imagenes/iconos/resina-dental.png' },
+                { name: 'Corona zirconia', icon: '/imagenes/iconos/corona-zirconia.png' },
+                { name: 'Prótesis sobre implantes', icon: '/imagenes/iconos/protesis-sobre-implantes.png' },
+                { name: 'All in four', icon: null },
+                { name: 'All on six', icon: null },
               ].map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -426,10 +437,10 @@ export default function App() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
-                { nombre: 'Dr. Juan Lizarraga', especialidad: 'Endodoncia', genero: 'male' },
-                { nombre: 'Dr. Luis Osuna', especialidad: 'Odontología General', genero: 'male' },
+                { nombre: 'Dr. Juan Manuel Lizárraga', especialidad: 'Endodoncia', genero: 'male' },
+                { nombre: 'Dr. Luis Osuna', especialidad: 'Odontología Restauradora Avanzada', genero: 'male' },
                 { nombre: 'Dr. Mario Díaz', especialidad: 'Periodoncia e Implantología General', genero: 'male' },
-                { nombre: 'Dra. Krizia Zamudio', especialidad: 'Odontología Restauradora Avanzada', genero: 'female' },
+                { nombre: 'Dra. Krizia Zamudio', especialidad: 'Odontología Integral', genero: 'female' },
                 { nombre: 'Dra. Erika Bernal', especialidad: 'Ortodoncia', genero: 'female' },
               ].map((doc, index) => (
                 <motion.div
@@ -443,7 +454,7 @@ export default function App() {
                   <div className="p-6 text-center">
                     <div className="w-24 h-24 mx-auto rounded-full border-2 border-primary-500 bg-primary-50 overflow-hidden">
                       <img
-                        src={`https://xsgames.co/randomusers/assets/avatars/${doc.genero}/${index + 1}.jpg`}
+                        src={doc.nombre === 'Dr. Juan Manuel Lizárraga' ? '/imagenes/juan-manuel-lizarraga.jpg' : doc.nombre === 'Dr. Luis Osuna' ? '/imagenes/Luis-Osuna.jpg' : `https://xsgames.co/randomusers/assets/avatars/${doc.genero}/${index + 1}.jpg`}
                         alt={doc.nombre}
                         className="w-full h-full object-cover"
                         loading="lazy"
@@ -532,7 +543,7 @@ export default function App() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ubicados en la Zona más Céntrica de Mazatlán</h2>
-                <p className="text-lg text-gray-700 mb-6">Nos encontramos en Av. Insurgentes 912 a 2 minutos del Estadio Teodoro Mariscal, entre Av. Ejército México y Av. Revolución.</p>
+                <p className="text-lg text-gray-700 mb-6">Nos encontramos en Av. Insurgentes 912 a 2 minutos del Estadio Teodoro Mariscal, entre Av. Ejército México y Av. La Marina.</p>
                 <a
                   href="https://www.google.com/maps?q=Av.+Insurgentes+912,+Mazatl%C3%A1n"
                   target="_blank"
@@ -576,10 +587,10 @@ export default function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">¿Qué dicen de nosotros?</h2>
               <div className="mt-4 flex items-center justify-center gap-2 text-yellow-500">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg key={i} className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 ))}
               </div>
-              <div className="mt-2 text-sm text-gray-600">Basado en reseñas de Google</div>
+              <div className="mt-2 text-xl text-gray-600">Basado en reseñas de Google</div>
               <a
                 href="https://www.google.com/maps?q=Pacifika+Cl%C3%ADnica+Dental+Mazatl%C3%A1n&hl=es"
                 target="_blank"
@@ -672,6 +683,28 @@ export default function App() {
                   </div>
                   <div className="flex items-start gap-4 group">
                     <div className="flex items-center justify-center pt-1">
+                      <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-lg">WhatsApp</p>
+                      <p className="text-gray-600">669 158 1164</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 group">
+                    <div className="flex items-center justify-center pt-1">
+                      <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 text-lg">WhatsApp</p>
+                      <p className="text-gray-600">669 158 1164</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 group">
+                    <div className="flex items-center justify-center pt-1">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-black">
                         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
                         <polyline points="12,6 12,12 16,14" stroke="currentColor" strokeWidth="2"/>
@@ -748,6 +781,11 @@ export default function App() {
                         <option value="Diseño de Sonrisa">Diseño de Sonrisa</option>
                         <option value="Carillas Dentales">Carillas Dentales</option>
                         <option value="Prótesis Dentales">Prótesis Dentales</option>
+                        <option value="Resina dental">Resina dental</option>
+                        <option value="Corona zirconia">Corona zirconia</option>
+                        <option value="Prótesis sobre implantes">Prótesis sobre implantes</option>
+                        <option value="All in four">All in four</option>
+                        <option value="All on six">All on six</option>
                       </select>
                     </div>
                   </div>
