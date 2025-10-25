@@ -170,7 +170,7 @@ export default function Endodoncia() {
                   viewport={{ once: true, amount: 0.3 }}
                 >
                   <img
-                    src="public/imagenes/juan-manuel-lizarraga.jpg"
+                    src="/imagenes/juan-manuel-lizarraga.jpg"
                     alt="Dr. Juan Manuel Lizárraga - Endodoncista en Mazatlán"
                     className="w-full h-full min-h-[600px] object-cover"
                   />
