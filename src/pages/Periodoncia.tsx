@@ -12,8 +12,6 @@ import imgLimpieza from '../../imagenes/limpieza_profunda.webp';
 import imgGingivectomia from '../../imagenes/gingivectomia2.webp';
 import imgRecubrimiento from '../../imagenes/recubrimiento_radicular2.webp';
 import imgImplantes from '../../imagenes/implantes_dentales.webp';
-import imgA from '../../imagenes/aprato_ortodoncia.webp';
-import imgB from '../../imagenes/ortodoncia_placas.webp';
 import imgRegeneracion from '../../imagenes/cirugia-regeneracion-osea.jpeg';
 
 export default function Periodoncia() {
