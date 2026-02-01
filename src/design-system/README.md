@@ -258,3 +258,4 @@ Edita `src/design-system/styles/custom.css`:
 - Aplicar espaciado consistente
 - Usar colores semánticamente correctos
 - Probar en diferentes dispositivos
+
