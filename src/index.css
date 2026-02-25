@@ -4,3 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent horizontal overflow from animations */
+html, body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}

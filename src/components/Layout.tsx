@@ -107,7 +107,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gray-50 text-gray-900 overflow-x-hidden">
       {/* Header / Sticky Nav */}
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur bg-slate-900/95 border-b border-slate-700 shadow-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">

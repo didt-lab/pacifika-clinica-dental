@@ -90,7 +90,7 @@ export default function Periodoncia() {
 
         {/* Doctor Section */}
         <div id="especialista" className="absolute -mt-12"></div>
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 100 }}
