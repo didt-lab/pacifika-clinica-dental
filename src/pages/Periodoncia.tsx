@@ -64,11 +64,11 @@ export default function Periodoncia() {
                 className="max-w-4xl"
               >
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-                  Periodoncia en Mazatlán: <span className="text-primary-500">Tratamientos para <p>cuidar tus encías y</p> dientes
+                  Periodoncia en Mazatlán: <span className="text-primary-500"><span className="block">Tratamientos para</span><span className="block">cuidar tus encías y dientes</span>
                   </span>
                 </h1>
                 <p className="text-xl mb-8 leading-relaxed text-gray-300">
-                  Especialista en salud periodontal. Tratamientos modernos como <p> <b> limpieza profunda, raspado y alisado radicular, gingivectomías,</b></p> recubrimientos radiculares, implantes dentales y regeneración ósea.
+                  Especialista en salud periodontal. Tratamientos modernos como <span className="block"><b>limpieza profunda, raspado y alisado radicular, gingivectomías,</b></span> recubrimientos radiculares, implantes dentales y regeneración ósea.
                 </p>
                 <div className="flex justify-start">
                   <a
@@ -111,7 +111,7 @@ export default function Periodoncia() {
                   <img
                     src="/imagenes/mario-cristerna.jpeg"
                     alt="Dr. Mario Cristerna - Periodoncista en Mazatlán"
-                    className="w-full h-full min-h-[600px] object-cover"
+                    className="w-full h-full min-h-[400px] lg:min-h-[600px] object-cover"
                   />
                   <motion.div
                     className="absolute top-6 right-6"

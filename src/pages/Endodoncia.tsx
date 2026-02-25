@@ -91,7 +91,7 @@ export default function Endodoncia() {
                   <img
                     src="/imagenes/juan-manuel-lizarraga.jpg"
                     alt="Dr. Juan Manuel Lizárraga - Endodoncista en Mazatlán"
-                    className="w-full h-full min-h-[600px] object-cover"
+                    className="w-full h-full min-h-[400px] lg:min-h-[600px] object-cover"
                   />
                   <motion.div
                     className="absolute top-6 right-6"
@@ -316,7 +316,7 @@ export default function Endodoncia() {
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&h=300&fit=crop"
+                  src="/imagenes/endodoncia-dientes-anteriores.webp"
                   alt="Endodoncia en dientes anteriores, premolares y molares"
                   className="w-full h-44 object-cover"
                   loading="lazy"

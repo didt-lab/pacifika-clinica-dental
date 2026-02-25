@@ -86,6 +86,7 @@ interface LayoutProps {
 export default function Layout({ children, currentPage = "inicio" }: LayoutProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
 
   const handleNavigation = (item: typeof navItems[0]) => {
     if (item.isPage) {
@@ -223,8 +224,12 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
                 <div key={item.id}>
                   <button
                     onClick={() => {
-                      handleNavigation(item);
-                      setIsMobileMenuOpen(false);
+                      if (item.submenu) {
+                        setMobileSubmenu(mobileSubmenu === item.id ? null : item.id);
+                      } else {
+                        handleNavigation(item);
+                        setIsMobileMenuOpen(false);
+                      }
                     }}
                     className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition whitespace-pre-line flex items-center justify-between ${currentPage === item.id
                       ? "bg-primary-500 text-white"
@@ -233,14 +238,14 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
                   >
                     {item.label}
                     {item.submenu && (
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-3 h-3 transition-transform duration-200 ${mobileSubmenu === item.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     )}
                   </button>
 
                   {/* Mobile Submenu */}
-                  {item.submenu && currentPage === item.id && (
+                  {item.submenu && mobileSubmenu === item.id && (
                     <div className="ml-4 mt-2 space-y-1">
                       {item.submenu.map((subItem) => (
                         <button
@@ -367,9 +372,14 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
                   <span>📧</span>
                   <span>pacifikaclinicadental@hotmail.com</span>
                 </div>
-                <div className="flex items-center justify-center md:justify-start gap-3">
-                  <span>🕒</span>
-                  <span>Lunes - Viernes 08:00 - 18:00</span>
+                <div className="flex flex-col items-center justify-center md:items-start md:justify-start gap-1">
+                  <div className="flex items-center gap-3">
+                    <span>🕒</span>
+                    <span>Lunes - Viernes 8:00 a 20:00</span>
+                  </div>
+                  <div className="flex items-center gap-3 ml-7">
+                    <span>Sábado 9:00 a 14:00</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -378,6 +388,10 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
             <div className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Pacifika Clínica Dental. Todos los derechos reservados.
             </div>
+            <p className="text-gray-500 text-sm">
+              Powered by {' '}
+              <a href="https://xan.mx/" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">XAN</a>
+            </p>
             <div className="flex gap-4 text-gray-400 text-sm">
               <a href="/privacidad" className="hover:text-white transition-colors">Privacidad</a>
               <a href="/terminos" className="hover:text-white transition-colors">Términos</a>

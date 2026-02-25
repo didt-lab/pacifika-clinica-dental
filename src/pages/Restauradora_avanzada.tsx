@@ -107,7 +107,7 @@ export default function RestauradoraAvanzada() {
                   <img
                     src="/imagenes/Luis-Osuna.jpg"
                     alt="Dr. Luis Arturo Osuna Orpinela- restauradora avanzada en Mazatlán"
-                    className="w-full h-full min-h-[600px] object-cover"
+                    className="w-full h-full min-h-[400px] lg:min-h-[600px] object-cover"
                   />
                   <motion.div
                     className="absolute top-6 right-6"
@@ -142,7 +142,7 @@ export default function RestauradoraAvanzada() {
                       viewport={{ once: true }}
                     >
                       <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                        Tu periodoncista en Mazatlán
+                        Tu especialista en Odontología Restauradora Avanzada
                       </h2>
                     </motion.div>
 
@@ -153,9 +153,26 @@ export default function RestauradoraAvanzada() {
                       transition={{ duration: 0.8, delay: 0.8 }}
                       viewport={{ once: true }}
                     >
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        El <b>Dr. Luis Arturo Osuna Orpinela</b> es especialista en <b>Odontología Restauradora Avanzada</b>, con formación en la <b>Universidad La Salle Bajío</b> y especialidad en la <b>UNAM</b>. Con trayectoria enfocada en la rehabilitación oral, ofrece tratamientos modernos como <b>resinas, coronas, carillas, prótesis e implantes dentales</b>. Atiende en español e inglés, brindando una atención personalizada y de calidad a cada paciente.
+                      <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                        El Dr. Luis Arturo Osuna Orpinela, formado en la Universidad La Salle Bajío y la UNAM, ofrece soluciones de alta complejidad en resinas, carillas e implantes. Su práctica integra tecnología de punta para garantizar resultados estéticos y funcionales bajo un enfoque personalizado.
+                        <br /><br />
+                        Respaldado por la especialidad en Odontología Restauradora Avanzada de la UNAM, el Dr. Osuna aplica un modelo multidisciplinario que combina endodoncia, periodoncia e implantología. Esto permite ejecutar tratamientos integrales más ágiles, predecibles y con costos optimizados para el paciente.
                       </p>
+                      <a
+                        href="https://www.instagram.com/p/DMb3SbcArku/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-3 text-gray-800 hover:text-primary-500 transition-colors group"
+                      >
+                        <div className="p-2 rounded-full bg-gray-100 group-hover:bg-primary-50 transition-colors">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                          </svg>
+                        </div>
+                        <span className="font-semibold text-lg">Seguir en Instagram</span>
+                      </a>
                     </motion.div>
 
                     {/* CTA */}
@@ -220,7 +237,7 @@ export default function RestauradoraAvanzada() {
               >
                 <img src="/imagenes/resinas_restauraciones.webp" alt="Resinas y restauraciones" className="w-full h-44 object-cover" />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Resinas y restauraciones</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Resinas y restauraciones directas</h3>
                   <p className="text-gray-600 mb-4">Tratamientos para reparar dientes con caries pequeñas o fracturas leves, devolviendo su forma y función de manera estética.</p>
                   <ul className="text-sm text-gray-700 mb-4 space-y-1">
                     <li>• Resina dental</li>
@@ -265,14 +282,13 @@ export default function RestauradoraAvanzada() {
               >
                 <img src="/imagenes/protesis_dental.webp" alt="Implantes y prótesis" className="w-full h-44 object-cover" />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Implantes y prótesis</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Prótesis sobre implante</h3>
                   <p className="text-gray-600 mb-4">Si has perdido uno o varios dientes, los implantes y prótesis son la mejor opción para recuperar la función al masticar y mejorar la sonrisa. Existen soluciones removibles y fijas según tus necesidades.</p>
                   <ul className="text-sm text-gray-700 mb-4 space-y-1">
                     <li>• Corona sobre implante</li>
                     <li>• Prótesis removible (unilateral, bilateral, total)</li>
-                    <li>• Prótesis sobre 4 implantes</li>
-                    <li>• Prótesis sobre 6 implantes</li>
-                    <li>• Prótesis All-on-4 y All-on-6</li>
+                    <li>• Prótesis All-on-4</li>
+                    <li>• Prótesis All-on-6</li>
                   </ul>
                   <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20implantes" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
@@ -288,7 +304,7 @@ export default function RestauradoraAvanzada() {
               >
                 <img src="/imagenes/blanqueamiento_dental.webp" alt="Tratamientos complementarios" className="w-full h-44 object-cover" />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Tratamientos complementarios</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Tratamiento complementarios y control de bruxismo</h3>
                   <p className="text-gray-600 mb-4">Además de las restauraciones, ofrecemos tratamientos que ayudan a mantener tu salud bucal y estética, como limpiezas, blanqueamientos y guardas para proteger tus dientes.</p>
                   <ul className="text-sm text-gray-700 mb-4 space-y-1">
                     <li>• Limpieza dental</li>
@@ -368,7 +384,7 @@ export default function RestauradoraAvanzada() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    src="/imagenes/smile.webp"
+                    src="/imagenes/smiles.webp"
                     alt="Imagen clínica periodontal A"
                     className="w-full h-60 sm:h-72 lg:h-[420px] object-cover rounded-2xl shadow-lg"
                   />
@@ -377,7 +393,7 @@ export default function RestauradoraAvanzada() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.15 }}
                     viewport={{ once: true }}
-                    src="/imagenes/smile2.webp"
+                    src="/imagenes/smiles2.webp"
                     alt="Imagen clínica periodontal B"
                     className="w-full h-60 sm:h-72 lg:h-[420px] object-cover rounded-2xl shadow-lg"
                   />

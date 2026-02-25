@@ -128,7 +128,7 @@ export default function App() {
             <img
               src="/background-inicio.jpg"
               alt="Pacifika Clínica Dental"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </motion.div>
 
@@ -142,7 +142,7 @@ export default function App() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full md:w-[80%] ml-0 md:ml-0 -ml-6 sm:-ml-8 lg:-ml-12 xl:-ml-64 "
+              className="w-full md:w-[80%]"
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-left">
                 Clínica Dental en Mazatlán:
@@ -174,8 +174,6 @@ export default function App() {
             </motion.div>
           </div>
         </section>
-
-
 
         {/* Información Section */}
         <section id="información" className="py-12 bg-gray-50">
@@ -231,7 +229,7 @@ export default function App() {
                 </h2>
 
                 <p className="text-lg text-gray-600 leading-relaxed">
-                  Con más de 15 años de experiencia, nuestra clínica Dental en Mazatlán, cuenta con especialistas de tiempo completo en ortodoncia endodoncia, odontología integral, restauradora avanzada, periodoncia e implantes dedicados a ofrecerte, tratamientos de alta, calidad y resultados que transforman sonrisas
+                  Con más de 15 años de experiencia, nuestra clínica Dental en Mazatlán, cuenta con especialistas de tiempo completo en ortodoncia, endodoncia, odontología integral, restauradora avanzada, periodoncia e implantes dedicados a ofrecerte, tratamientos de alta, calidad y resultados que transforman sonrisas
                 </p>
 
                 <motion.div
@@ -253,6 +251,22 @@ export default function App() {
               </motion.div>
             </div>
           </div>
+        </section>
+
+        {/* Video Banner Strip */}
+        <section className="relative w-full overflow-hidden" style={{ height: 'clamp(180px, 40vh, 500px)' }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ pointerEvents: 'none' }}
+          >
+            <source src="/imagenes/pacifika-dental-video.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle dark overlay */}
+          <div className="absolute inset-0 bg-black/20"></div>
         </section>
 
         {/* Tratamientos Destacados Section */}
@@ -280,9 +294,10 @@ export default function App() {
                 { name: 'Prótesis Dentales', icon: '/imagenes/iconos/protesis_dentales.png', href: '/restauradora-avanzada' },
                 { name: 'Resina dental', icon: '/imagenes/iconos/resina-dental.png', href: '/odontologia-integral' },
                 { name: 'Corona zirconia', icon: '/imagenes/iconos/corona-zirconia.png', href: '/restauradora-avanzada' },
-                { name: 'Prótesis sobre implantes', icon: '/imagenes/iconos/protesis-sobre-implantes.png', href: '/restauradora-avanzada' },
+                { name: 'Prótesis total sobre implantes', icon: '/imagenes/iconos/protesis-sobre-implantes.png', href: '/restauradora-avanzada' },
                 { name: 'All in four', icon: null, href: '/restauradora-avanzada' },
                 { name: 'All on six', icon: null, href: '/restauradora-avanzada' },
+                { name: 'Bruxismo', icon: null, href: '/restauradora-avanzada' },
               ].map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -448,9 +463,9 @@ export default function App() {
                 viewport={{ once: true }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ubicados en la Zona más Céntrica de Mazatlán</h2>
-                <p className="text-lg text-gray-700 mb-6">Nos encontramos en Av. Insurgentes 912 a 2 minutos del Estadio Teodoro Mariscal, entre Av. Ejército México y Av. La Marina.</p>
+                <p className="text-lg text-gray-700 mb-6">Nos encontramos en Av. Insurgentes 912, Fracc. María Fernanda, Mazatlán. A 2 minutos del Estadio Teodoro Mariscal, entre Av. Ejército México y Av. La Marina.</p>
                 <a
-                  href="https://www.google.com/maps?q=Av.+Insurgentes+912,+Mazatl%C3%A1n"
+                  href="https://www.google.com/maps?q=Av.+Insurgentes+912,+Fracc.+María+Fernanda,+Mazatl%C3%A1n"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 shadow-lg transition"
@@ -471,9 +486,8 @@ export default function App() {
                 <div className="aspect-[4/3] w-full">
                   <iframe
                     title="Ubicación Pacifika Clínica Dental"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.157938225813!2d-106.409!3d23.249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86bcd13d2b6c7ff9%3A0x0!2sAv.%20Insurgentes%20912%2C%20Mazatl%C3%A1n!5e0!3m2!1ses-419!2smx!4v1700000000000"
-                    width="600"
-                    height="450"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.157938225813!2d-106.409!3d23.249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86bcd13d2b6c7ff9%3A0x0!2sAv.%20Insurgentes%20912%2C%20Fracc.%20Mar%C3%ADa%20Fernanda%2C%20Mazatl%C3%A1n!5e0!3m2!1ses-419!2smx!4v1700000000000"
+                    className="w-full h-full"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"

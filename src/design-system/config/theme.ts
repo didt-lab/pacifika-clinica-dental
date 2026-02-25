@@ -7,7 +7,7 @@ export const theme = {
     // Colores primarios
     primary: {
       50: '#f7fdf0',
-      100: '#eef9e0', 
+      100: '#eef9e0',
       200: '#ddf2c1',
       300: '#c7e89a',
       400: '#b0dd73',
@@ -17,7 +17,7 @@ export const theme = {
       800: '#658926',
       900: '#50741e',
     },
-    
+
     // Colores secundarios
     secondary: {
       50: '#f0fdf4',
@@ -31,7 +31,7 @@ export const theme = {
       800: '#166534',
       900: '#14532d',
     },
-    
+
     // Colores neutros
     neutral: {
       50: '#f9fafb',
@@ -45,13 +45,13 @@ export const theme = {
       800: '#1f2937',
       900: '#111827',
     },
-    
+
     // Colores de estado
     success: '#10b981',
     warning: '#f59e0b',
     error: '#ef4444',
     info: '#3b82f6',
-    
+
     // Colores específicos de la clínica
     dental: {
       blue: '#2563eb',
@@ -60,7 +60,7 @@ export const theme = {
       coral: '#fb7185',
     }
   },
-  
+
   // Tipografías
   typography: {
     fontFamily: {
@@ -68,7 +68,7 @@ export const theme = {
       serif: ['Georgia', 'serif'],
       mono: ['Fira Code', 'monospace'],
     },
-    
+
     fontSize: {
       xs: '0.75rem',    // 12px
       sm: '0.875rem',   // 14px
@@ -81,7 +81,7 @@ export const theme = {
       '5xl': '3rem',    // 48px
       '6xl': '3.75rem', // 60px
     },
-    
+
     fontWeight: {
       light: '300',
       normal: '400',
@@ -90,7 +90,7 @@ export const theme = {
       bold: '700',
       extrabold: '800',
     },
-    
+
     lineHeight: {
       tight: '1.25',
       snug: '1.375',
@@ -99,7 +99,7 @@ export const theme = {
       loose: '2',
     }
   },
-  
+
   // Espaciado
   spacing: {
     px: '1px',
@@ -118,7 +118,7 @@ export const theme = {
     24: '6rem',     // 96px
     32: '8rem',     // 128px
   },
-  
+
   // Bordes y radios
   borderRadius: {
     none: '0',
@@ -131,7 +131,7 @@ export const theme = {
     '3xl': '1.5rem',  // 24px
     full: '9999px',
   },
-  
+
   // Sombras
   boxShadow: {
     sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
@@ -142,7 +142,7 @@ export const theme = {
     '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
     inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
   },
-  
+
   // Breakpoints
   breakpoints: {
     sm: '640px',
@@ -151,7 +151,7 @@ export const theme = {
     xl: '1280px',
     '2xl': '1536px',
   },
-  
+
   // Z-index
   zIndex: {
     hide: -1,
@@ -177,25 +177,25 @@ export const clinicConfig = {
   phone: '+52 (669) 992 87 00',
   email: 'pacifikaclinicadental@hotmail.com',
   address: 'Av. Insurgentes 912, Fracc. María Fernanda',
-  
+
   // Horarios
   schedule: {
-    weekdays: '08:00 - 18:00',
-    saturday: '08:00 - 14:00',
+    weekdays: '8:00 a 20:00',
+    saturday: '9:00 a 14:00',
     sunday: 'Cerrado'
   },
-  
+
   // Redes sociales
   social: {
     instagram: 'https://instagram.com/pacifika_dental',
     facebook: 'https://facebook.com/pacifika_dental',
     whatsapp: 'https://wa.me/526699928700'
   },
-  
+
   // Servicios principales
   services: [
     'Odontología General',
-    'Odontología Cosmética', 
+    'Odontología Cosmética',
     'Odontología Pediátrica',
     'Ortodoncia',
     'Implantes Dentales',
@@ -203,7 +203,7 @@ export const clinicConfig = {
     'Diseño de Sonrisa',
     'Periodoncia'
   ],
-  
+
   // Especialistas
   specialists: [
     { name: 'Dr. Juan Lizarraga', specialty: 'Endodoncia' },

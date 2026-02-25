@@ -259,3 +259,4 @@ Edita `src/design-system/styles/custom.css`:
 - Usar colores semánticamente correctos
 - Probar en diferentes dispositivos
 
+

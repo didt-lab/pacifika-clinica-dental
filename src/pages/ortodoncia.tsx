@@ -64,7 +64,8 @@ export default function Ortodoncia() {
                   Ortodoncia en Mazatlán: <span className="text-primary-500">para transformar tu <p>sonrisa</p></span>
                 </h1>
                 <p className="text-xl mb-8 leading-relaxed text-gray-300">
-                  Con brackets zafiro, brackets estéticos y alineadores <p>invisibles, transforma tu sonrisa con tratamientos modernos y personalizados</p>                </p>
+                  Con brackets estéticos, autoligables y alineadores invisibles, transforma tu sonrisa con tratamientos modernos y personalizados
+                </p>
                 <div className="flex justify-start">
                   <a
                     href="https://wa.me/526699928700?text=Hola%2C%20necesito%20una%20consulta%20de%20ortodoncia"
@@ -106,7 +107,7 @@ export default function Ortodoncia() {
                   <img
                     src="/imagenes/erika-bernal.jpg"
                     alt="Dra. Erika Bernal - Ortodoncista en Mazatlán"
-                    className="w-full h-full min-h-[600px] object-cover"
+                    className="w-full h-full min-h-[400px] lg:min-h-[600px] object-cover"
                   />
                   <motion.div
                     className="absolute top-6 right-6"
@@ -208,7 +209,7 @@ export default function Ortodoncia() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <img src="imagenes/brackets_metalicos.webp" alt="Brackets metálicos" className="w-full h-44 object-cover" />
+                <img src="/imagenes/brackets-metalicos.webp" alt="Brackets metálicos" className="w-full h-44 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Brackets Metálicos</h3>
                   <p className="text-gray-600 mb-4">La opción más usada y efectiva para corregir mordida y alinear dientes. Resistentes, confiables y accesibles.</p>
@@ -233,7 +234,7 @@ export default function Ortodoncia() {
                 <img src="/imagenes/brackets_ceramica.webp" alt="Brackets estéticos" className="w-full h-44 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Brackets Estéticos</h3>
-                  <p className="text-gray-600 mb-4">Hechos con materiales que se mimetizan con el color del diente, ideales para quienes buscan un tratamiento más discreto.</p>
+                  <p className="text-gray-600 mb-4">Hechos con materiales de zafiro y cerámica que se mimetizan con el color del diente, ideales para quienes buscan un tratamiento más discreto.</p>
                   <ul className="text-sm text-gray-700 space-y-2 mb-5">
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Apariencia estética</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Funcionalidad similar a los metálicos</li>
@@ -251,7 +252,7 @@ export default function Ortodoncia() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <img src="/imagenes/Brackets-de-zafiro.webp" alt="Brackets de zafiro" className="w-full h-44 object-cover" />
+                <img src="/imagenes/brackets-zafiro.webp" alt="Brackets de zafiro" className="w-full h-44 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Brackets zafiro</h3>
                   <p className="text-gray-600 mb-4">Brackets transparentes casi invisibles, que mantienen la estética durante todo el tratamiento.</p>
@@ -264,25 +265,47 @@ export default function Ortodoncia() {
                 </div>
               </motion.article>
 
-              {/* Brackets Porcelana */}
+              {/* Alineadores Invisibles */}
               <motion.article
-                id="brackets_porcelana"
+                id="alineadores_invisibles"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <img src="imagenes/brackets_porcelana.webp" alt="Brackets de porcelana" className="w-full h-44 object-cover" />
+                <img src="/imagenes/alineadores-invisibles.webp" alt="Alineadores Invisibles" className="w-full h-44 object-cover" />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Brackets porcelana</h3>
-                  <p className="text-gray-600 mb-4">Una alternativa estética de alta resistencia, que combina durabilidad con una apariencia más natural.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Alineadores Invisibles</h3>
+                  <p className="text-gray-600 mb-4">Disfruta de una ortodoncia avanzada, discreta y removible.</p>
                   <ul className="text-sm text-gray-700 space-y-2 mb-5">
-                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Estéticos</li>
-                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Resistentes</li>
-                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Opción intermedia entre metálicos y zafiro</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> 100% Estéticos</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Removibles</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Planificación Digital</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Brackets%20de%20Porcelana" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Alineadores%20Invisibles" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                </div>
+              </motion.article>
+
+              {/* Ortodoncia de Autoligado Estético */}
+              <motion.article
+                id="autoligado_estetico"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img src="/imagenes/autoligado.jpg" alt="Ortodoncia de Autoligado Estético" className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Ortodoncia de Autoligado Estético</h3>
+                  <p className="text-gray-600 mb-4">Tecnología ortodóntica de alta precisión que optimiza los tiempos de tratamiento mediante un sistema de baja fricción.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Eficiencia Clínica</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Higiene Avanzada</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Discreción Total</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Autoligado%20Est%C3%A9tico" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -291,11 +314,11 @@ export default function Ortodoncia() {
                 id="aparatologia_ortopedica"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <img src="imagenes/ortopedia_maxilar.webp" alt="Aparatología Ortopédica" className="w-full h-44 object-cover" />
+                <img src="/imagenes/ortopedia.webp" alt="Aparatología Ortopédica" className="w-full h-44 object-cover" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Aparatología Ortopédica</h3>
                   <p className="text-gray-600 mb-4">Diseñada para niños y adolescentes en crecimiento, ayudando a guiar el desarrollo de los huesos maxilares y prevenir problemas de mordida.</p>
@@ -305,6 +328,28 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Mejora la función de la mordida y la respiración</li>
                   </ul>
                   <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Aparatolog%C3%ADa%20Ortop%C3%A9dica" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                </div>
+              </motion.article>
+
+              {/* Retenedores Dentales */}
+              <motion.article
+                id="retenedores_dentales"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img src="/imagenes/retenedores-dentales.webp" alt="Retenedores Dentales" className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Retenedores Dentales</h3>
+                  <p className="text-gray-600 mb-4">Sistemas de contención para preservar la alineación lograda tras la ortodoncia y prevenir recidivas o movimientos dentales no deseados.</p>
+                  <ul className="text-sm text-gray-700 space-y-2 mb-5">
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Estabilidad Post-Tratamiento</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Alta Precisión</li>
+                    <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Opciones Versátiles</li>
+                  </ul>
+                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Retenedores%20Dentales" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
             </div>
@@ -333,7 +378,7 @@ export default function Ortodoncia() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.15 }}
                     viewport={{ once: true }}
-                    src="/imagenes/ortodoncia_placas.webp"
+                    src="/imagenes/invisible.jpg"
                     alt="Alineadores transparentes - imagen B"
                     className="w-full h-60 sm:h-72 lg:h-[420px] object-cover rounded-2xl shadow-lg"
                   />

@@ -90,7 +90,7 @@ export default function OdontologiaIntegral() {
                   <img
                     src="/imagenes/krizia-zamudio.jpg"
                     alt="Dra. Krizia Zamudio - Odontología Integral en Mazatlán"
-                    className="w-full h-full min-h-[600px] object-cover"
+                    className="w-full h-full min-h-[400px] lg:min-h-[600px] object-cover"
                   />
                   <motion.div
                     className="absolute top-6 right-6"
