@@ -318,7 +318,7 @@ export default function Ortodoncia() {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <img src="/imagenes/ortopedia.webp" alt="Aparatología Ortopédica" className="w-full h-44 object-cover" />
+                <img src="/imagenes/ortopedia.webp" alt="Aparatología Ortopédica" className="w-full h-44 object-cover object-bottom" />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Aparatología Ortopédica</h3>
                   <p className="text-gray-600 mb-4">Diseñada para niños y adolescentes en crecimiento, ayudando a guiar el desarrollo de los huesos maxilares y prevenir problemas de mordida.</p>
