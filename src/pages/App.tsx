@@ -173,7 +173,7 @@ export default function App() {
         </section>
 
         {/* Video Banner Section */}
-        <section className="relative w-full overflow-hidden" style={{ height: 'clamp(400px, 60vh, 700px)' }}>
+        <section className="relative w-full overflow-hidden" style={{ height: 'clamp(500px, 80vh, 900px)' }}>
           <video
             autoPlay
             muted
