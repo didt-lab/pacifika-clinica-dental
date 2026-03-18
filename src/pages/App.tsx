@@ -99,19 +99,6 @@ export default function App() {
     return () => clearInterval(id);
   }, []);
 
-  const scrollToId = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const headerHeight = 80;
-      const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-
 
   const { scrollY } = useScroll();
   const backgroundY = useTransform(scrollY, [0, 500], [0, 150]);
