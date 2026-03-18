@@ -172,86 +172,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* Información Section */}
-        <section id="información" className="py-12 bg-gray-50">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="grid grid-cols-2 gap-4"
-                style={{ willChange: 'transform, opacity' }}
-              >
-                <div className="col-span-2 aspect-video rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src="/imagenes/dentista-1.jpg"
-                    alt="Clínica dental Pacifika - Atención profesional"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="aspect-square rounded-xl overflow-hidden shadow-md">
-                  <img
-                    src="/imagenes/dentista-2.jpg"
-                    alt="Especialistas en odontología"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div className="aspect-square rounded-xl overflow-hidden shadow-md">
-                  <img
-                    src="/imagenes/dentista-3.jpg"
-                    alt="Tratamientos dentales avanzados"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-                style={{ willChange: 'transform, opacity' }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                  Atención dental de alta calidad en Mazatlán
-                </h2>
-
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Con más de 15 años de experiencia, nuestra clínica Dental en Mazatlán, cuenta con especialistas de tiempo completo en ortodoncia, endodoncia, odontología integral, restauradora avanzada, periodoncia e implantes dedicados a ofrecerte, tratamientos de alta, calidad y resultados que transforman sonrisas
-                </p>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
-                  <button
-                    onClick={() => scrollToId('contacto')}
-                    className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                  >
-                    Más información
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                      <line x1="5" y1="12" x2="19" y2="12" stroke="currentColor" strokeWidth="2" />
-                      <polyline points="12,5 19,12 12,19" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                  </button>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Video Banner Strip */}
-        <section className="relative w-full overflow-hidden" style={{ height: 'clamp(180px, 40vh, 500px)' }}>
+        {/* Video Banner Section */}
+        <section className="relative w-full overflow-hidden" style={{ height: 'clamp(400px, 60vh, 700px)' }}>
           <video
             autoPlay
             muted
@@ -462,7 +384,7 @@ export default function App() {
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ubicados en la Zona más Céntrica de Mazatlán</h2>
                 <p className="text-lg text-gray-700 mb-6">Nos encontramos en Av. Insurgentes 912, Fracc. María Fernanda, Mazatlán. A 2 minutos del Estadio Teodoro Mariscal, entre Av. Ejército México y Av. La Marina.</p>
                 <a
-                  href="https://www.google.com/maps?q=Av.+Insurgentes+912,+Fracc.+María+Fernanda,+Mazatl%C3%A1n"
+                  href="https://maps.app.goo.gl/Y2vLTJGJ7Ugbj5vN9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 shadow-lg transition"
@@ -483,7 +405,7 @@ export default function App() {
                 <div className="aspect-[4/3] w-full">
                   <iframe
                     title="Ubicación Pacifika Clínica Dental"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.157938225813!2d-106.409!3d23.249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86bcd13d2b6c7ff9%3A0x0!2sAv.%20Insurgentes%20912%2C%20Fracc.%20Mar%C3%ADa%20Fernanda%2C%20Mazatl%C3%A1n!5e0!3m2!1ses-419!2smx!4v1700000000000"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.1830136833637!2d-106.42998159999999!3d23.2381026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1407af06ab3ad4b5%3A0x975adb40f7b9938!2sPacifika%20M%C3%A9dica%20Dental.!5e1!3m2!1ses!2smx!4v1773847455704!5m2!1ses!2smx"
                     className="w-full h-full"
                     style={{ border: 0 }}
                     allowFullScreen
