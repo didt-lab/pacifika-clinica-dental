@@ -160,13 +160,13 @@ export default function App() {
         </section>
 
         {/* Video Banner Section */}
-        <section className="relative w-full overflow-hidden" style={{ height: 'clamp(500px, 80vh, 900px)' }}>
+        <section className="relative w-full overflow-hidden" style={{ height: 'clamp(300px, 56.25vw, 900px)' }}>
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover object-center"
             style={{ pointerEvents: 'none' }}
           >
             <source src="/imagenes/pacifika-dental-video.mp4" type="video/mp4" />
