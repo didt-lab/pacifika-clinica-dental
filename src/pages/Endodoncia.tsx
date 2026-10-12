@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
 import ContactInfo from '../components/ContactInfo';
 import ContactForm from '../components/ContactForm';
+import heroEndodoncia from '../../imagenes/Endodoncia.jpg';
 
 export default function Endodoncia() {
   // Parallax scroll effect for hero background
@@ -22,7 +23,7 @@ export default function Endodoncia() {
     <Layout currentPage="endodoncia">
       <main>
         {/* Hero Section */}
-        <section id="portada_endodoncia" className="relative text-white py-20 overflow-hidden">
+        <section id="portada_endodoncia" className="relative text-white py-20 overflow-hidden min-h-[calc(100vh-6rem)] flex items-center">
           {/* Background with parallax */}
           <motion.div
             className="absolute inset-0 z-0"
@@ -31,12 +32,12 @@ export default function Endodoncia() {
             <div
               className="w-full h-[120%] bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: 'url(/imagenes/Endodoncia.jpg)',
+                backgroundImage: `url(${heroEndodoncia})`,
               }}
             />
             <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+          <div className="relative w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -153,7 +154,7 @@ export default function Endodoncia() {
                       viewport={{ once: true }}
                     >
                       <a
-                        href="https://api.whatsapp.com/send?phone=5216691581164&text=Hola%2C%20vengo%20del%20sitio%20web%20y%20quiero%20agendar%20una%20consulta%20con%20el%20Dr.%20Juan%20Manuel%20Lizarraga"
+                        href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -189,19 +190,19 @@ export default function Endodoncia() {
               <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
                 La endodoncia también conocida como tratamiento de conductos, se utiliza para eliminar el dolor, la infección o la inflamación dental de manera definitiva.
               </p>
-              <motion.a
-                href="/#contacto"
+              <motion.button
+                onClick={() => window.dispatchEvent(new Event('open-contact-modal'))}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all duration-300 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
                 Más información
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             {/* Benefits Header */}
@@ -329,7 +330,7 @@ export default function Endodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Evita la extracción dental</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Conserva dientes anteriores, premolares y molares</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.div>
 
@@ -355,7 +356,7 @@ export default function Endodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Endoposte metálico de gran durabilidad</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Mejora la estabilidad del diente restaurado</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.div>
 
@@ -381,7 +382,7 @@ export default function Endodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Conserva la pieza dental</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Alternativa antes de extracción</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.div>
 
@@ -407,7 +408,7 @@ export default function Endodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Protege la raíz del diente</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Mejora el pronóstico del tratamiento</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.div>
 
@@ -433,7 +434,7 @@ export default function Endodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Conserva la estructura dental</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Preparación segura para retratamiento</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.div>
 
@@ -459,7 +460,7 @@ export default function Endodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Permite retratamientos seguros</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Reemplazo por nueva corona cuando es necesario</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Endodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.div>
             </div>

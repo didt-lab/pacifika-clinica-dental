@@ -7,6 +7,8 @@ import OdontologiaIntegral from './pages/OdontologiaIntegral.tsx'
 import Ortodoncia from './pages/ortodoncia.tsx'
 import Periodoncia from './pages/Periodoncia.tsx'
 import RestauradoraAvanzada from './pages/Restauradora_avanzada.tsx'
+import Odontopediatria from './pages/Odontopediatria.tsx'
+import NuestroEquipo from './pages/NuestroEquipo.tsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -19,6 +21,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/ortodoncia" element={<Ortodoncia />} />
         <Route path="/periodoncia" element={<Periodoncia />} />
         <Route path="/restauradora-avanzada" element={<RestauradoraAvanzada />} />
+        <Route path="/odontopediatria" element={<Odontopediatria />} />
+        <Route path="/nuestro-equipo" element={<NuestroEquipo />} />
       </Routes>
     </Router>
   </React.StrictMode>,

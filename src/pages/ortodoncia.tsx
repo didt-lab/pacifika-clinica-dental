@@ -37,7 +37,7 @@ export default function Ortodoncia() {
     <Layout currentPage="ortodoncia">
       <main>
         {/* Hero Section */}
-        <section id="portada_ortodoncia" className="relative text-white py-20 overflow-hidden">
+        <section id="portada_ortodoncia" className="relative text-white py-20 overflow-hidden min-h-[calc(100vh-6rem)] flex items-center">
           {/* Background with parallax */}
           <motion.div
             className="absolute inset-0 z-0"
@@ -52,7 +52,7 @@ export default function Ortodoncia() {
             />
             <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+          <div className="relative w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -68,7 +68,7 @@ export default function Ortodoncia() {
                 </p>
                 <div className="flex justify-start">
                   <a
-                    href="https://wa.me/526699928700?text=Hola%2C%20necesito%20una%20consulta%20de%20ortodoncia"
+                    href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -167,7 +167,7 @@ export default function Ortodoncia() {
                       viewport={{ once: true }}
                     >
                       <a
-                        href="https://wa.me/526699928700?text=Hola%2C%20necesito%20agendar%20una%20cita%20con%20la%20Dra.%20Bernal%20para%20ortodoncia"
+                        href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -218,7 +218,7 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Efectivos en casos complejos</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Recomendados para adolescentes y adultos</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Brackets%20Met%C3%A1licos" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -239,7 +239,7 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Apariencia estética</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Funcionalidad similar a los metálicos</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Brackets%20Est%C3%A9ticos" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -261,7 +261,7 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Resistentes</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Confortables</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Brackets%20de%20Zafiro" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -283,7 +283,7 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Removibles</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Planificación Digital</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Alineadores%20Invisibles" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -305,7 +305,7 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Higiene Avanzada</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Discreción Total</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Autoligado%20Est%C3%A9tico" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -327,7 +327,7 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Corrección temprana de hábitos</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Mejora la función de la mordida y la respiración</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Aparatolog%C3%ADa%20Ortop%C3%A9dica" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -349,7 +349,7 @@ export default function Ortodoncia() {
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Alta Precisión</li>
                     <li className="flex items-center gap-2"><span className="inline-block w-2 h-2 rounded-full bg-primary-500"></span> Opciones Versátiles</li>
                   </ul>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20Retenedores%20Dentales" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
             </div>
@@ -415,7 +415,7 @@ export default function Ortodoncia() {
                 </ul>
                 <p className="text-gray-700 mb-6">Conoce si eres candidato a este tipo de tratamiento.</p>
                 <a
-                  href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20alineadores%20dentales"
+                  href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold shadow-lg transition-all"

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Layout from '../components/Layout';
 import ContactInfo from '../components/ContactInfo';
 import ContactForm from '../components/ContactForm';
+import TratamientosDestacados from '../components/TratamientosDestacados';
 import fachadaGaro from '../../imagenes/instalaciones/FACHADA GARO.webp';
 import inst2 from '../../imagenes/instalaciones/2.webp';
 import inst3p from '../../imagenes/instalaciones/3-p.webp';
@@ -41,6 +42,11 @@ export default function App() {
       title: 'Instalaciones modernas y seguras',
       text: 'Consultorios particulares con tecnología avanzada',
       image: inst2374
+    },
+    {
+      title: 'Consultorio de odontopediatría',
+      text: 'Un espacio diseñado para la comodidad de los niños.',
+      image: '/imagenes/odontopediatria/galeria-home.webp'
     },
     {
       title: 'Instalaciones modernas y seguras',
@@ -107,7 +113,7 @@ export default function App() {
     <Layout currentPage="inicio">
       <main>
         {/* Hero Section */}
-        <section id="inicio" className="relative text-white py-20 min-h-screen overflow-hidden">
+        <section id="inicio" className="relative text-white py-20 min-h-[calc(100vh-6rem)] flex items-center overflow-hidden">
           <motion.div
             className="absolute inset-0 w-full h-full"
             style={{ y: backgroundY }}
@@ -124,7 +130,7 @@ export default function App() {
             style={{ y: backgroundY }}
           />
 
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+          <div className="relative w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -176,76 +182,7 @@ export default function App() {
         </section>
 
         {/* Tratamientos Destacados Section */}
-        <section id="tratamientos" className="py-12 bg-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tratamientos Destacados</h2>
-            </motion.div>
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {[
-                { name: 'Blanqueamiento Dental', icon: '/imagenes/iconos/blanqueamiento.png', href: '/odontologia-integral' },
-                { name: 'Limpieza Dental', icon: '/imagenes/iconos/Limpieza.png', href: '/odontologia-integral' },
-                { name: 'Brackets Estéticos', icon: '/imagenes/iconos/brackets.png', href: '/ortodoncia' },
-                { name: 'Implantes Dentales', icon: '/imagenes/iconos/implante.png', href: '/periodoncia' },
-                { name: 'Endodoncia', icon: '/imagenes/iconos/endodoncia.png', href: '/endodoncia' },
-                { name: 'Diseño de Sonrisa', icon: null, href: '/restauradora-avanzada' },
-                { name: 'Carillas Dentales', icon: '/imagenes/iconos/carilla-dental.png', href: '/restauradora-avanzada' },
-                { name: 'Prótesis Dentales', icon: '/imagenes/iconos/protesis_dentales.png', href: '/restauradora-avanzada' },
-                { name: 'Resina dental', icon: '/imagenes/iconos/resina-dental.png', href: '/odontologia-integral' },
-                { name: 'Corona zirconia', icon: '/imagenes/iconos/corona-zirconia.png', href: '/restauradora-avanzada' },
-                { name: 'Prótesis total sobre implantes', icon: '/imagenes/iconos/protesis-sobre-implantes.png', href: '/restauradora-avanzada' },
-                { name: 'All in four', icon: null, href: '/restauradora-avanzada' },
-                { name: 'All on six', icon: null, href: '/restauradora-avanzada' },
-                { name: 'Bruxismo', icon: null, href: '/restauradora-avanzada' },
-              ].map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
-                  onClick={() => window.location.href = item.href}
-                >
-                  <div className="w-16 h-16 mx-auto mb-4 bg-primary-500 rounded-full flex items-center justify-center relative">
-                    {/* Fallback SVG visible by default */}
-                    <svg className="w-10 h-10 text-white absolute" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                      <path d="M12 20c4.418 0 8-3.582 8-8V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v5c0 4.418 3.582 8 8 8Z" />
-                      <path d="M8 13s1.5 2 4 2 4-2 4-2" />
-                      <path d="M9 9h.01M15 9h.01" />
-                    </svg>
-                    {/* Image overlay; on load hides the fallback */}
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt={item.name}
-                        className="w-10 h-10 object-contain relative"
-                        onLoad={(e) => {
-                          const svg = (e.target as HTMLImageElement).previousElementSibling as HTMLElement | null;
-                          if (svg) svg.style.display = 'none';
-                        }}
-                        onError={(e) => {
-                          // Keep fallback visible and hide the broken image
-                          (e.target as HTMLImageElement).style.display = 'none';
-                        }}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    )}
-                  </div>
-                  <h3 className="font-semibold text-gray-900">{item.name}</h3>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <TratamientosDestacados />
 
         {/* Especialistas Section */}
         <section id="especialistas" className="py-16 bg-gray-50">
@@ -264,9 +201,10 @@ export default function App() {
               {[
                 { nombre: 'Dr. Juan Manuel Lizárraga', especialidad: 'Endodoncia', imagen: '/imagenes/juan-manuel-lizarraga.jpg', href: '/endodoncia' },
                 { nombre: 'Dr. Luis Osuna', especialidad: 'Odontología Restauradora Avanzada', imagen: '/imagenes/Luis-Osuna.jpg', href: '/restauradora-avanzada' },
-                { nombre: 'Dr. Mario Cristerna', especialidad: 'Periodoncia e Implantología General', imagen: '/imagenes/mario-cristerna.jpeg', href: '/periodoncia' },
+                { nombre: 'Dr. Mario Cristerna', especialidad: 'Periodoncia e Implantología General', imagen: '/imagenes/mario-cristerna-avatar.webp', href: '/periodoncia' },
                 { nombre: 'Dra. Krizia Zamudio', especialidad: 'Odontología Integral', imagen: '/imagenes/krizia-zamudio.jpg', href: '/odontologia-integral' },
                 { nombre: 'Dra. Erika Bernal', especialidad: 'Ortodoncia', imagen: '/imagenes/erika-bernal.jpg', href: '/ortodoncia' },
+                { nombre: 'Dra. Daniela Garza Osuna', especialidad: 'Odontopediatra', imagen: '/imagenes/daniela-garza.webp', href: '/odontopediatria' },
               ].map((doc, index) => (
                 <motion.div
                   key={doc.nombre}

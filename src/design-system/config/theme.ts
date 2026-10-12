@@ -189,7 +189,7 @@ export const clinicConfig = {
   social: {
     instagram: 'https://instagram.com/pacifika_dental',
     facebook: 'https://facebook.com/pacifika_dental',
-    whatsapp: 'https://wa.me/526699928700'
+    whatsapp: 'https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20'
   },
 
   // Servicios principales

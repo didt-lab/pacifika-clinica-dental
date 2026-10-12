@@ -5,52 +5,49 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev        # Start dev server on port 3000 (auto-opens browser)
-npm run build      # TypeScript check + Vite production build → dist/
-npm run preview    # Preview production build locally
-npm run lint       # ESLint on all .ts/.tsx files (max-warnings 0, strict)
+npm run dev        # Vite dev server on port 3000 (auto-opens browser)
+npm run build      # tsc type-check + vite build → dist/
+npm run preview    # Serve the production build locally
+npm run lint       # ESLint (--max-warnings 0)
 ```
 
-No test framework is configured.
+- No test framework. `npm run build` is the real correctness check (tsconfig is `strict` with `noUnusedLocals`/`noUnusedParameters`, so unused imports break the build).
+- `npm run lint` has no ESLint config file in the repo, so it fails until one is added.
 
 ## Architecture
 
-This is a **React 18 + TypeScript + Vite** dental clinic marketing website deployed on Netlify as an SPA.
+React 18 + TypeScript + Vite marketing site for Pacifika Clínica Dental (Mazatlán). All UI copy is Spanish.
 
-### Routing (React Router DOM v7)
+### Routing
 
-| Route | Page File |
-|-------|-----------|
-| `/` | `src/pages/App.tsx` — home page |
-| `/endodoncia` | `src/pages/Endodoncia.tsx` |
-| `/odontologia-integral` | `src/pages/OdontologiaIntegral.tsx` |
-| `/ortodoncia` | `src/pages/ortodoncia.tsx` |
-| `/periodoncia` | `src/pages/Periodoncia.tsx` |
-| `/restauradora-avanzada` | `src/pages/Restauradora_avanzada.tsx` |
+Routes are declared in `src/main.tsx` (React Router v7, `BrowserRouter`). Each route maps to one page in `src/pages/` (`/` → `App.tsx`, plus one page per specialty: endodoncia, odontologia-integral, ortodoncia, periodoncia, restauradora-avanzada). Note the inconsistent filenames (`ortodoncia.tsx`, `Restauradora_avanzada.tsx`) — keep imports in sync if renaming.
 
-Router is configured in `src/main.tsx`. Netlify is configured to redirect all routes to `index.html` for SPA support.
+Each specialty page is a large self-contained file with the same structure: wraps content in `components/Layout.tsx` (nav + footer), its own Framer Motion scroll effects, a service grid, and `ContactInfo` + `ContactForm` at the bottom. Changes to shared sections usually need repeating across all specialty pages.
 
-### Design System (`src/design-system/`)
+### Contact form
 
-Centralized UI library consumed by all pages and components:
+`src/components/ContactForm.tsx` posts to two external services in parallel, with no backend:
+- **FormSubmit** (`formsubmit.co/ajax/...`) — awaited; drives success/error UI.
+- **Zapier webhook** — fire-and-forget (`no-cors`, errors swallowed).
 
-- `config/theme.ts` — single source of truth for colors, typography, spacing, shadows. Primary brand color: `#A5C83E`.
-- `components/` — reusable primitives: `Button`, `Card`, `DoctorCard`, `ServiceCard`, `StatsCard`, `Input`, `Logo`, `Icons`
-- `styles/custom.css` — custom CSS utilities, keyframe animations (float, pulse-dental, slideIn variants)
-- `index.ts` — barrel export for the design system
+### Design system
 
-Tailwind is configured in `tailwind.config.js` to extend the theme with the design system's tokens. Both `src/` and the design system paths are in Tailwind's content config.
-
-### Shared Components (`src/components/`)
-
-Domain-specific reusable components: `Layout.tsx` (main nav wrapper), `ContactForm.tsx`, `ImageSlider.tsx`, `TestimonialSlider.tsx`, `LazyImage.tsx`, `MemoizedSection.tsx`.
+`src/design-system/` (theme tokens in `config/theme.ts`, primitives like `Button`/`Card`/`Input`, animations in `styles/custom.css`) exists and feeds `tailwind.config.js`, but **pages and components do not import its React components** — they use Tailwind classes and inline styles directly (brand green `#A5C83E`). Its README references an `@/design-system` alias that is not configured in `vite.config.ts`/`tsconfig.json`; use relative imports.
 
 ### Assets
 
-Static images live in `imagenes/` (not `public/`). WebP format is used extensively. Image errors fall back to inline SVG icons.
+Images live in `imagenes/` at repo root (not `public/`) and are imported as ES modules from pages (`import x from '../../imagenes/...webp'`), so Vite hashes them into `dist/assets/`. Type declarations are in `src/types/images.d.ts`. Prefer WebP.
 
-### Key Libraries
+## Deployment
 
-- **Framer Motion** — scroll-driven animations (`useScroll`, `useTransform`, `whileInView`)
-- **Tailwind CSS** — utility styling; custom tokens extend the default theme
-- **React Router DOM** — client-side routing
+Two targets, both serving `dist/` as an SPA:
+- **Netlify** — `netlify.toml` (Node 18, `/* → /index.html` redirect).
+- **Apache/FTP hosting** — `public/.htaccess` rewrites unknown paths to `index.html`.
+
+`dist/` is in `.gitignore` but some of its files are still tracked by git, so builds show up as diffs.
+
+## Non-source folders
+
+- `respaldo_FTP/` — backup of the previous static/PHP site from the FTP server. Reference only.
+- `Respaldo/` — dated local backups. Reference only.
+- `.docx` wireframe at root — original multipage wireframe spec.

@@ -13,6 +13,7 @@ import imgGingivectomia from '../../imagenes/gingivectomia2.webp';
 import imgRecubrimiento from '../../imagenes/recubrimiento_radicular2.webp';
 import imgImplantes from '../../imagenes/implantes_dentales.webp';
 import imgRegeneracion from '../../imagenes/cirugia-regeneracion-osea.jpeg';
+import heroPeriodoncia from '../../imagenes/periodoncia.jpg';
 
 export default function Periodoncia() {
   // Parallax scroll effect for hero background
@@ -41,7 +42,7 @@ export default function Periodoncia() {
     <Layout currentPage="periodoncia">
       <main>
         {/* Hero Section */}
-        <section id="portada_periodoncia" className="relative text-white py-20 overflow-hidden">
+        <section id="portada_periodoncia" className="relative text-white py-20 overflow-hidden min-h-[calc(100vh-6rem)] flex items-center">
           {/* Background with parallax */}
           <motion.div
             className="absolute inset-0 z-0"
@@ -50,12 +51,12 @@ export default function Periodoncia() {
             <div
               className="w-full h-[120%] bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: 'url(/imagenes/Periodoncia.jpg)',
+                backgroundImage: `url(${heroPeriodoncia})`,
               }}
             />
             <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+          <div className="relative w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -72,7 +73,7 @@ export default function Periodoncia() {
                 </p>
                 <div className="flex justify-start">
                   <a
-                    href="https://wa.me/526699928700?text=Hola%2C%20necesito%20una%20consulta%20de%20periodoncia"
+                    href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -111,7 +112,7 @@ export default function Periodoncia() {
                   <img
                     src="/imagenes/mario-cristerna.jpeg"
                     alt="Dr. Mario Cristerna - Periodoncista en Mazatlán"
-                    className="w-full h-full min-h-[400px] lg:min-h-[600px] object-cover"
+                    className="w-full h-full min-h-[400px] lg:min-h-[600px] object-cover object-top"
                   />
                   <motion.div
                     className="absolute top-6 right-6"
@@ -171,7 +172,7 @@ export default function Periodoncia() {
                       viewport={{ once: true }}
                     >
                       <a
-                        href="https://wa.me/526699928700?text=Hola%2C%20necesito%20agendar%20una%20cita%20con%20el%20Dr.%20Lizárraga%20para%20periodoncia"
+                        href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -207,26 +208,19 @@ export default function Periodoncia() {
               <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
                 La periodoncia es la especialidad dental que se encarga del diagnóstico, prevención y tratamiento de las enfermedades que afectan los tejidos que soportan los dientes (encías, hueso alveolar y ligamento periodontal).
               </p>
-              <motion.a
-                href="#contacto"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const contactSection = document.getElementById('contacto');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+              <motion.button
+                onClick={() => window.dispatchEvent(new Event('open-contact-modal'))}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all duration-300 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
                 Más información
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             {/* Benefits Header */}
@@ -340,7 +334,7 @@ export default function Periodoncia() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Consulta periodontal</h3>
                   <p className="text-gray-600 mb-4">Valoración clínica y radiográfica para emitir un diagnóstico.</p>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20de%20periodoncia" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -356,7 +350,7 @@ export default function Periodoncia() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Limpieza profunda dental</h3>
                   <p className="text-gray-600 mb-4">Conocida como raspado y alisado radicular, elimina sarro y bacterias debajo de la encía para frenar la gingivitis y periodontitis.</p>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20de%20limpieza%20profunda" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -372,7 +366,7 @@ export default function Periodoncia() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Gingivectomía</h3>
                   <p className="text-gray-600 mb-4">Cirugía de encías para recortar y dar forma a los tejidos inflamados o excesivos.</p>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20gingivectom%C3%ADa" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -388,7 +382,7 @@ export default function Periodoncia() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Cirugía de recubrimiento radicular (Injerto de encía)</h3>
                   <p className="text-gray-600 mb-4">Tratamiento para encías retraídas que expone la raíz del diente, devolviendo estética y protección.</p>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20injerto%20de%20enc%C3%ADa" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -404,7 +398,7 @@ export default function Periodoncia() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Implantes dentales</h3>
                   <p className="text-gray-600 mb-4">Solución segura y duradera para reemplazar dientes perdidos.</p>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20implantes%20dentales" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
 
@@ -420,7 +414,7 @@ export default function Periodoncia() {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Cirugía de regeneración ósea</h3>
                   <p className="text-gray-600 mb-4">Procedimiento para recuperar el hueso perdido y poder colocar implantes.</p>
-                  <a href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20para%20regeneraci%C3%B3n%20%C3%B3sea" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all">Agendar valoración</a>
                 </div>
               </motion.article>
             </div>
@@ -471,7 +465,7 @@ export default function Periodoncia() {
                   <li className="flex items-start gap-3"><span className="mt-1 w-2 h-2 rounded-full bg-primary-500"></span> Mejora de la función al masticar</li>
                 </ul>
                 <a
-                  href="https://wa.me/526699928700?text=Hola%2C%20quiero%20agendar%20valoraci%C3%B3n%20de%20periodoncia"
+                  href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold shadow-lg transition-all"

@@ -59,25 +59,32 @@ export default function ContactForm({ defaultTratamiento = '' }: Props) {
     setSubmitStatus('submitting');
 
     try {
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.log('Form data (development):', formData);
+      const payload = { ...formData };
+
+      const formSubmitPromise = fetch('https://formsubmit.co/ajax/pacifikaclinicadental@hotmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          ...payload,
+          _subject: `Nueva solicitud de cita - ${payload.tratamiento || 'General'}`,
+          _template: 'table',
+        }),
+      });
+
+      fetch('https://hooks.zapier.com/hooks/catch/23176459/up8y7gu/', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(payload),
+      }).catch(() => {});
+
+      const formSubmitRes = await formSubmitPromise;
+
+      if (formSubmitRes.ok) {
         setSubmitStatus('success');
         setFormData({ nombre: '', correo: '', telefono: '', tratamiento: defaultTratamiento, mensaje: '' });
         setFormErrors({});
       } else {
-        const response = await fetch('https://formspree.io/f/xdkogkgk', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...formData, _cc: 'pacifikaclinicadental@hotmail.com' }),
-        });
-        if (response.ok) {
-          setSubmitStatus('success');
-          setFormData({ nombre: '', correo: '', telefono: '', tratamiento: defaultTratamiento, mensaje: '' });
-          setFormErrors({});
-        } else {
-          throw new Error('Error en el envío');
-        }
+        throw new Error('Error en el envío');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -157,6 +164,7 @@ export default function ContactForm({ defaultTratamiento = '' }: Props) {
               <option value="Prótesis sobre implantes">Prótesis sobre implantes</option>
               <option value="All in four">All in four</option>
               <option value="All on six">All on six</option>
+              <option value="Odontopediatría">Odontopediatría</option>
             </select>
             {formErrors.tratamiento && <p className="text-red-500 text-xs mt-1">{formErrors.tratamiento}</p>}
           </div>

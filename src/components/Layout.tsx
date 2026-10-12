@@ -1,82 +1,66 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import ContactForm from './ContactForm';
 
-const scrollToId = (id: string) => {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const y = el.getBoundingClientRect().top + window.scrollY - 84;
-  window.scrollTo({ top: y, behavior: "smooth" });
-};
+const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5216691581164&text=Hola%2C%20vengo%20del%20sitio%20web%20y%20quiero%20agendar%20una%20consulta";
 
-const navItems = [
-  { id: "inicio", label: "Inicio", isPage: false, href: "/" },
+const specialties = [
   {
     id: "odontologia-integral",
-    label: "Odontología\nIntegral",
-    isPage: true,
-    href: "/odontologia-integral",
-    submenu: [
-      { id: "especialista", label: "Especialista", href: "/odontologia-integral#especialista" },
-      { id: "beneficios", label: "Beneficios", href: "/odontologia-integral#beneficios" },
-      { id: "especialidades_odontologia", label: "Especialidades", href: "/odontologia-integral#especialidades_odontologia" },
-      { id: "preguntas_odontologia", label: "FAQ", href: "/odontologia-integral#preguntas_odontologia" },
-      { id: "contacto_odontologia", label: "Contacto", href: "/odontologia-integral#contacto_odontologia" }
-    ]
+    label: "Odontología Integral",
+    href: "/odontologia-integral"
   },
   {
     id: "restauradora-avanzada",
-    label: "Restauradora\nAvanzada",
-    isPage: true,
-    href: "/restauradora-avanzada",
-    submenu: [
-      { id: "especialista", label: "Especialista", href: "/restauradora-avanzada#especialista" },
-      { id: "tratamientos_periodoncia", label: "Tratamientos", href: "/restauradora-avanzada#tratamientos_periodoncia" },
-      { id: "alineadores_periodoncia", label: "Beneficios", href: "/restauradora-avanzada#alineadores_periodoncia" },
-      { id: "preguntas_periodoncia", label: "FAQ", href: "/restauradora-avanzada#preguntas_periodoncia" },
-      { id: "contacto_periodoncia", label: "Contacto", href: "/restauradora-avanzada#contacto_periodoncia" }
-    ]
+    label: "Restauradora Avanzada",
+    href: "/restauradora-avanzada"
   },
   {
     id: "endodoncia",
     label: "Endodoncia",
-    isPage: true,
-    href: "/endodoncia",
-    submenu: [
-      { id: "especialista", label: "Especialista", href: "/endodoncia#especialista" },
-      { id: "beneficios", label: "Beneficios", href: "/endodoncia#beneficios" },
-      { id: "especialidades_endodoncia", label: "Especialidades", href: "/endodoncia#especialidades_endodoncia" },
-      { id: "preguntas_endodoncia", label: "FAQ", href: "/endodoncia#preguntas_endodoncia" },
-      { id: "contacto_endodoncia", label: "Contacto", href: "/endodoncia#contacto_endodoncia" }
-    ]
+    href: "/endodoncia"
   },
   {
     id: "periodoncia",
-    label: "Periodoncia\nImplantes",
-    isPage: true,
-    href: "/periodoncia",
-    submenu: [
-      { id: "especialista", label: "Especialista", href: "/periodoncia#especialista" },
-      { id: "tratamientos_periodoncia", label: "Tratamientos", href: "/periodoncia#tratamientos_periodoncia" },
-      { id: "alineadores_periodoncia", label: "Beneficios", href: "/periodoncia#alineadores_periodoncia" },
-      { id: "preguntas_periodoncia", label: "FAQ", href: "/periodoncia#preguntas_periodoncia" },
-      { id: "contacto_periodoncia", label: "Contacto", href: "/periodoncia#contacto_periodoncia" }
-    ]
+    label: "Periodoncia e Implantes",
+    href: "/periodoncia"
   },
   {
     id: "ortodoncia",
     label: "Ortodoncia",
-    isPage: true,
-    href: "/ortodoncia",
-    submenu: [
-      { id: "especialista", label: "Especialista", href: "/ortodoncia#especialista" },
-      { id: "tratamientos_ortodoncia", label: "Tratamientos", href: "/ortodoncia#tratamientos_ortodoncia" },
-      { id: "alineadores_ortodoncia", label: "Alineadores", href: "/ortodoncia#alineadores_ortodoncia" },
-      { id: "preguntas_ortodoncia", label: "FAQ", href: "/ortodoncia#preguntas_ortodoncia" },
-      { id: "contacto_ortodoncia", label: "Contacto", href: "/ortodoncia#contacto_ortodoncia" }
-    ]
+    href: "/ortodoncia"
   },
-  { id: "contacto", label: "Contacto", isPage: false, href: "/#contacto" },
+  {
+    id: "odontopediatria",
+    label: "Odontopediatría",
+    href: "/odontopediatria",
+    isNew: true
+  },
 ];
+
+const navLinkClass = (active: boolean) =>
+  `px-4 py-2 rounded-lg text-sm font-medium transition ${active
+    ? "bg-primary-500 text-slate-900"
+    : "hover:bg-slate-800 text-slate-300 hover:text-white"
+  }`;
+
+const mobileLinkClass = (active: boolean) =>
+  `w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition ${active
+    ? "bg-primary-500 text-slate-900"
+    : "hover:bg-slate-800 text-slate-300 hover:text-white"
+  }`;
+
+const NewBadge = () => (
+  <span className="px-2 py-0.5 rounded-full bg-primary-500 text-slate-900 text-[11px] font-bold uppercase tracking-wide">
+    Nuevo
+  </span>
+);
+
+const ChevronIcon = ({ open }: { open: boolean }) => (
+  <svg className={`w-3 h-3 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+  </svg>
+);
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -85,25 +69,47 @@ interface LayoutProps {
 
 export default function Layout({ children, currentPage = "inicio" }: LayoutProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
-  const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  const [isSpecialtiesOpen, setIsSpecialtiesOpen] = useState(false);
+  const [isMobileSpecialtiesOpen, setIsMobileSpecialtiesOpen] = useState(false);
+  const specialtiesRef = useRef<HTMLDivElement>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  const handleNavigation = (item: typeof navItems[0]) => {
-    if (item.isPage) {
-      window.location.href = item.href;
+  useEffect(() => {
+    if (isContactModalOpen) {
+      document.body.style.overflow = 'hidden';
     } else {
-      if (item.id === "inicio") {
-        window.location.href = "/";
-      } else if (item.id === "contacto" && window.location.pathname !== "/") {
-        window.location.href = "/#contacto";
-      } else {
-        scrollToId(item.id);
-      }
+      document.body.style.overflow = '';
     }
-  };
+    return () => { document.body.style.overflow = ''; };
+  }, [isContactModalOpen]);
 
-  const handleSubmenuNavigation = (href: string) => {
-    window.location.href = href;
+  useEffect(() => {
+    const openModal = () => setIsContactModalOpen(true);
+    window.addEventListener('open-contact-modal', openModal);
+    return () => window.removeEventListener('open-contact-modal', openModal);
+  }, []);
+
+  useEffect(() => {
+    if (!isSpecialtiesOpen) return;
+    const closeOnEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsSpecialtiesOpen(false);
+    };
+    const closeOnOutsideClick = (e: MouseEvent) => {
+      if (!specialtiesRef.current?.contains(e.target as Node)) setIsSpecialtiesOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    document.addEventListener('mousedown', closeOnOutsideClick);
+    return () => {
+      window.removeEventListener('keydown', closeOnEscape);
+      document.removeEventListener('mousedown', closeOnOutsideClick);
+    };
+  }, [isSpecialtiesOpen]);
+
+  const isSpecialtyPage = specialties.some((s) => s.id === currentPage);
+
+  const openContactModal = () => {
+    setIsContactModalOpen(true);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -125,53 +131,77 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
             </a>
           </div>
 
-          <nav className="hidden md:flex items-start gap-1 mx-2.5">
-            {navItems.map((item) => (
-              <div key={item.id} className="relative group">
-                <button
-                  onClick={() => handleNavigation(item)}
-                  onMouseEnter={() => item.submenu && setOpenSubmenu(item.id)}
-                  onMouseLeave={() => setOpenSubmenu(null)}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition whitespace-pre-line text-left flex items-center gap-1 ${currentPage === item.id
-                    ? "bg-primary-500 text-white"
-                    : "hover:bg-slate-800 text-slate-300 hover:text-white"
-                    }`}
-                >
-                  {item.label}
-                  {item.submenu && (
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  )}
-                </button>
+          <nav className="hidden lg:flex items-center gap-2 mx-2.5 self-stretch whitespace-nowrap" aria-label="Principal">
+            <a href="/" className={navLinkClass(currentPage === "inicio")}>
+              Inicio
+            </a>
 
-                {/* Submenu */}
-                {item.submenu && openSubmenu === item.id && (
-                  <div
-                    className="absolute top-full left-0 mt-1 w-48 bg-slate-800 rounded-lg shadow-lg border border-slate-700 py-2 z-50"
-                    onMouseEnter={() => setOpenSubmenu(item.id)}
-                    onMouseLeave={() => setOpenSubmenu(null)}
-                  >
-                    {item.submenu.map((subItem) => (
-                      <button
-                        key={subItem.id}
-                        onClick={() => handleSubmenuNavigation(subItem.href)}
-                        className="w-full text-left px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
+            {/* Especialidades: panel desplegable */}
+            <div ref={specialtiesRef} className="h-full flex items-center">
+              <button
+                type="button"
+                aria-expanded={isSpecialtiesOpen}
+                aria-controls="menu-especialidades"
+                onClick={() => setIsSpecialtiesOpen((open) => !open)}
+                className={`${navLinkClass(isSpecialtyPage || isSpecialtiesOpen)} inline-flex items-center gap-2`}
+              >
+                Especialidades
+                <ChevronIcon open={isSpecialtiesOpen} />
+              </button>
+
+              {isSpecialtiesOpen && (
+                <div id="menu-especialidades" className="absolute top-full inset-x-0 px-4 sm:px-6 lg:px-8">
+                  <div className="mx-auto max-w-7xl bg-slate-800 border border-slate-700 border-t-0 rounded-b-2xl shadow-2xl p-6">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                      {specialties.map((s) => (
+                        <a
+                          key={s.id}
+                          href={s.href}
+                          className={`flex items-center gap-3 rounded-xl border px-5 py-4 text-base font-semibold text-white hover:text-primary-400 transition-colors ${currentPage === s.id
+                            ? "border-primary-500 bg-slate-900"
+                            : "border-slate-700 hover:bg-slate-900"
+                            }`}
+                        >
+                          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A5C83E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 5 2 8 .4 2.5 1 5.5 2.5 5.5s1.6-3 2.2-5c.3-1 .8-1.5 2.3-1.5s2 .5 2.3 1.5c.6 2 .7 5 2.2 5s2.1-3 2.5-5.5c.5-3 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z" />
+                          </svg>
+                          {s.label}
+                          {s.isNew && <span className="ml-auto"><NewBadge /></span>}
+                        </a>
+                      ))}
+                    </div>
+                    <div className="mt-5 pt-5 border-t border-slate-700 flex flex-wrap items-center justify-between gap-4">
+                      <p className="text-sm text-slate-300">
+                        ¿No sabes qué especialidad necesitas? Agenda una valoración y te orientamos.
+                      </p>
+                      <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center px-4 py-2 rounded-lg border border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-slate-900 text-sm font-semibold transition-colors"
                       >
-                        {subItem.label}
-                      </button>
-                    ))}
+                        Escríbenos por WhatsApp
+                      </a>
+                    </div>
                   </div>
-                )}
-              </div>
-            ))}
+                </div>
+              )}
+            </div>
+
+            <a href="/nuestro-equipo" className={navLinkClass(currentPage === "nuestro-equipo")}>
+              Nuestro equipo
+            </a>
+
+            <button type="button" onClick={openContactModal} className={navLinkClass(false)}>
+              Contacto
+            </button>
           </nav>
 
           <div className="flex items-center gap-4">
             {/* Call button (mobile hidden) */}
             <a
               href="tel:+526699928700"
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-600 hover:bg-slate-800 text-slate-300 hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
+              className="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-600 hover:bg-slate-800 text-slate-300 hover:text-white text-sm font-medium transition-all duration-300 hover:scale-105"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -183,7 +213,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
               href="https://api.whatsapp.com/send?phone=5216691581164&text=Hola%2C%20vengo%20del%20sitio%20web%20y%20quiero%20agendar%20una%20consulta"
               target="_blank"
               rel="noreferrer"
-              className="hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 text-sm font-medium shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105"
+              className="hidden lg:inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 text-sm font-medium shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/40 transition-all duration-300 hover:scale-105"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2" />
@@ -197,7 +227,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
               aria-label="Toggle menu"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -217,52 +247,51 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur border-b border-slate-700 shadow-lg z-40"
+            className="lg:hidden absolute top-full left-0 right-0 bg-slate-900/95 backdrop-blur border-b border-slate-700 shadow-lg z-40"
           >
             <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <div key={item.id}>
-                  <button
-                    onClick={() => {
-                      if (item.submenu) {
-                        setMobileSubmenu(mobileSubmenu === item.id ? null : item.id);
-                      } else {
-                        handleNavigation(item);
-                        setIsMobileMenuOpen(false);
-                      }
-                    }}
-                    className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition whitespace-pre-line flex items-center justify-between ${currentPage === item.id
-                      ? "bg-primary-500 text-white"
-                      : "hover:bg-slate-800 text-slate-300 hover:text-white"
-                      }`}
-                  >
-                    {item.label}
-                    {item.submenu && (
-                      <svg className={`w-3 h-3 transition-transform duration-200 ${mobileSubmenu === item.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    )}
-                  </button>
+              <a href="/" onClick={() => setIsMobileMenuOpen(false)} className={`block ${mobileLinkClass(currentPage === "inicio")}`}>
+                Inicio
+              </a>
 
-                  {/* Mobile Submenu */}
-                  {item.submenu && mobileSubmenu === item.id && (
-                    <div className="ml-4 mt-2 space-y-1">
-                      {item.submenu.map((subItem) => (
-                        <button
-                          key={subItem.id}
-                          onClick={() => {
-                            handleSubmenuNavigation(subItem.href);
-                            setIsMobileMenuOpen(false);
-                          }}
-                          className="w-full text-left px-3 py-2 text-xs text-slate-400 hover:text-white hover:bg-slate-800 rounded transition-colors"
-                        >
-                          {subItem.label}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+              <div>
+                <button
+                  type="button"
+                  aria-expanded={isMobileSpecialtiesOpen}
+                  onClick={() => setIsMobileSpecialtiesOpen((open) => !open)}
+                  className={`${mobileLinkClass(isSpecialtyPage)} flex items-center justify-between`}
+                >
+                  Especialidades
+                  <ChevronIcon open={isMobileSpecialtiesOpen} />
+                </button>
+
+                {isMobileSpecialtiesOpen && (
+                  <div className="ml-4 mt-2 pl-3 border-l-2 border-slate-700 space-y-1">
+                    {specialties.map((s) => (
+                      <a
+                        key={s.id}
+                        href={s.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`flex items-center gap-2 px-3 py-2.5 rounded text-sm transition-colors ${currentPage === s.id
+                          ? "text-white font-semibold"
+                          : "text-slate-300 hover:text-white hover:bg-slate-800"
+                          }`}
+                      >
+                        {s.label}
+                        {s.isNew && <NewBadge />}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <a href="/nuestro-equipo" onClick={() => setIsMobileMenuOpen(false)} className={`block ${mobileLinkClass(currentPage === "nuestro-equipo")}`}>
+                Nuestro equipo
+              </a>
+
+              <button type="button" onClick={openContactModal} className={mobileLinkClass(false)}>
+                Contacto
+              </button>
 
               {/* Mobile CTAs */}
               <div className="pt-4 space-y-2 border-t border-slate-700">
@@ -301,6 +330,37 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
         {children}
       </main>
 
+      {/* Contact Modal */}
+      {isContactModalOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsContactModalOpen(false)}
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.25 }}
+            className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl z-10"
+          >
+            <button
+              onClick={() => setIsContactModalOpen(false)}
+              className="absolute top-3 right-3 z-20 p-1.5 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-600 hover:text-gray-900 transition-colors"
+              aria-label="Cerrar"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <ContactForm />
+          </motion.div>
+        </div>
+      )}
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
@@ -338,7 +398,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                     </svg>
                   </a>
-                  <a href="https://wa.me/526699928700" target="_blank" rel="noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors">
+                  <a href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20" target="_blank" rel="noreferrer" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488" />
                     </svg>
@@ -354,6 +414,7 @@ export default function Layout({ children, currentPage = "inicio" }: LayoutProps
                 <li><a href="/endodoncia" className="hover:text-white transition-colors">Endodoncia</a></li>
                 <li><a href="/periodoncia" className="hover:text-white transition-colors">Periodoncia e Implantes</a></li>
                 <li><a href="/ortodoncia" className="hover:text-white transition-colors">Ortodoncia</a></li>
+                <li><a href="/odontopediatria" className="hover:text-white transition-colors">Odontopediatría</a></li>
                 <li><a href="/#servicios" className="hover:text-white transition-colors">Ver Todos</a></li>
               </ul>
             </div>

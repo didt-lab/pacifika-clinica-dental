@@ -21,7 +21,7 @@ export default function OdontologiaIntegral() {
     <Layout currentPage="odontologia-integral">
       <main>
         {/* Hero Section */}
-        <section id="portada_odontologia_integral" className="relative text-white py-20 overflow-hidden">
+        <section id="portada_odontologia_integral" className="relative text-white py-20 overflow-hidden min-h-[calc(100vh-6rem)] flex items-center">
           {/* Background with parallax */}
           <motion.div
             className="absolute inset-0 z-0"
@@ -35,7 +35,7 @@ export default function OdontologiaIntegral() {
             />
             <div className="absolute inset-0 w-full h-[120%] bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent"></div>
           </motion.div>
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+          <div className="relative w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
             <div className="flex items-center">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -51,7 +51,7 @@ export default function OdontologiaIntegral() {
                 </p>
                 <div className="flex justify-start">
                   <a
-                    href="https://wa.me/526699928700?text=Hola%2C%20me%20gustaría%20una%20consulta%20de%20odontología%20integral"
+                    href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -150,7 +150,7 @@ export default function OdontologiaIntegral() {
                       viewport={{ once: true }}
                     >
                       <a
-                        href="https://wa.me/526699928700?text=Hola%2C%20quisiera%20agendar%20una%20cita%20con%20la%20Dra.%20Zamudio"
+                        href="https://api.whatsapp.com/send?phone=5216691581164&text=%C2%A1Hola!%20Vengo%20del%20sitio%20web%20de%20Pacifika%20y%20quiero%20agendar%20una%20cita%20"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-semibold text-lg shadow-lg transition-all duration-300 hover:shadow-xl"
@@ -186,26 +186,19 @@ export default function OdontologiaIntegral() {
               <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
                 La odontología integral se enfoca en el cuidado completo de tu salud bucal, abarcando desde la prevención y diagnóstico hasta tratamientos restauradores y estéticos para asegurar el bienestar general de tu sonrisa.
               </p>
-              <motion.a
-                href="#contacto"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const contactSection = document.getElementById('contacto');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+              <motion.button
+                onClick={() => window.dispatchEvent(new Event('open-contact-modal'))}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all duration-300 hover:shadow-lg"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500 text-white hover:bg-primary-600 font-medium transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
                 Más información
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             {/* Benefits Header */}
